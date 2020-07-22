@@ -4,21 +4,21 @@
 # OBJECTIVE:
 The “pic18f16q40-guitar-tuner” project highlights the advanced core independent peripherals found on the PIC18-Q40 family of devices to create a PIC18 powered guitar tuner. This project implements the 12-bit Analog to Digital Converter with Computation (ADCC) module to interface an analog microphone sensor which was used to measure sound frequency. The Direct Memory Access (DMA) module was used to transfer the ADCC result to memory core independently without any CPU intervention. The SPI and PWM modules were used to drive an LCD display to show the musical note output in real time, and the UART module was used to also display the musical notes output over a serial port in real time.
 
-## Software Used:
-       - MPLAB® X IDE 5.40 or newer [(microchip.com/mplab/mplab-x-ide)](http://www.microchip.com/mplab/mplab-x-ide)
-       - MPLAB® XC8 2.20 or a newer compiler [(microchip.com/mplab/compilers)](http://www.microchip.com/mplab/compilers)
-       - MPLAB® Code Configurator (MCC) 3.95.0 or newer [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
-       - MPLAB® Code Configurator (MCC) Device Libraries PIC10 / PIC12 / PIC16 / PIC18 MCUs [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
-       - Microchip PIC18F-Q Series Device Support (1.5.124) or newer [(packs.download.microchip.com/)](https://packs.download.microchip.com/)
+# Software Used:
+  - MPLAB® X IDE 5.40 or newer [(microchip.com/mplab/mplab-x-ide)](http://www.microchip.com/mplab/mplab-x-ide)
+  - MPLAB® XC8 2.20 or a newer compiler [(microchip.com/mplab/compilers)](http://www.microchip.com/mplab/compilers)
+  - MPLAB® Code Configurator (MCC) 3.95.0 or newer [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
+  - MPLAB® Code Configurator (MCC) Device Libraries PIC10 / PIC12 / PIC16 / PIC18 MCUs [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
+  - Microchip PIC18F-Q Series Device Support (1.5.124) or newer [(packs.download.microchip.com/)](https://packs.download.microchip.com/)
 
-## Hardware Used:
-         - [PIC18F16Q40 Microcontroller](https://www.microchip.com/wwwproducts/en/PIC18F16Q40)
-         - [Curiosity Low Pin Count (LPC) Development Board Rev4](https://www.microchip.com/DevelopmentTools/ProductDetails/DM164137)     
-         - [MikroElektronika MIC Click Board](https://www.mikroe.com/mic-click)
-         - [MikroElektronika LCD Mini Click Board](https://www.mikroe.com/lcd-mini-click)  
+# Hardware Used:
+  - [PIC18F16Q40 Microcontroller](https://www.microchip.com/wwwproducts/en/PIC18F16Q40)
+  - [Curiosity Low Pin Count (LPC) Development Board Rev4](https://www.microchip.com/DevelopmentTools/ProductDetails/DM164137)     
+  - [MikroElektronika MIC Click Board](https://www.mikroe.com/mic-click)
+  - [MikroElektronika LCD Mini Click Board](https://www.mikroe.com/lcd-mini-click)  
 
 ## Demo Configuration
-The Curiosity Low Pin Count (LPC) Development Board was selected as the development platform for this code example. The guitar tuner display was implemented using the MikroElektronika LCD Mini Click board (MIKROE-2453) and the MikroElektronika Mic Click Board (MIKROE-2563). The Curiosity LPC Development Board only has one MikroBUS socket which was used for the LCD display, so the Mic Click Board was connected using a breadboard and jumper wires. The jumper wire connections needed to connect the microphone on the breadboard to the PIC18F16Q40 on the Curiosity LPC Development Board are as follows:
+The Curiosity Low Pin Count (LPC) Development Board was selected as the development platform for this code example. The guitar tuner display was implemented using the MikroElektronika LCD Mini Click Board and the MikroElektronika Mic Click Board. The Curiosity LPC Development Board only has one MikroBUS socket which was used for the LCD display, so the Mic Click Board was connected using a breadboard and jumper wires. The jumper wire connections needed to connect the microphone on the breadboard to the PIC18F16Q40 on the Curiosity LPC Development Board are as follows:
 
 - Green wire: Connection between the analog output of the Mic Click Board to the corresponding positive ADC channel on the PIC microcontroller.
 
@@ -71,7 +71,7 @@ The TMR0 module was used in this code example to trigger the ADCC to perform con
 The LCDMini Library in MCC was used to generate the initialization code and functional APIs needed to use the display. The library sets up the SPI module with the correct configuration to ensure proper communication between the PIC microcontroller and the display driver, and also provides a set of functional APIs that make getting started with the display quick and easy. To add the LCDMini Library to an MPLABX project, open MCC and navigate to the "Device Resources" section. Once inside the Device Resources section, select the “Mikro-E Clicks” drop down menu, select “Displays”, and then add in the "LCDMini" library. The functional APIs provided by the LCD Mini library in MCC handle all of the SPI communication between the PIC and the display driver. The SPI module was used in this code example to communicate with the LCD display to show the real-time frequency of the musical note that is being played.
 
 ## PWM Module Configuration:
-The PWM module was used in this code example to control the brightness of the LCD display backlight on LCD Mini Click board. The duty cycle of the PWM output signal is set to 70%. The following code snippet shows how to change the PWM output signal duty cycle using the APIs provided by MCC:
+The PWM module was used in this code example to control the brightness of the LCD display backlight on LCD Mini Click Board. The duty cycle of the PWM output signal is set to 70%. The following code snippet shows how to change the PWM output signal duty cycle using the APIs provided by MCC:
 ```c
 PWM1_16BIT_SetSlice1Output1DutyCycleRegister(70);   // Setting LCD Brightness to 70%
 PWM1_16BIT_LoadBufferRegisters();
