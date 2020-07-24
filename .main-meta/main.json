@@ -14,7 +14,7 @@
         },
         "compiler": [
 			{
-				"name": ""XC8",
+				"name": "XC8",
 				"semverRange": "^2.20.0"
 			}
 		],
