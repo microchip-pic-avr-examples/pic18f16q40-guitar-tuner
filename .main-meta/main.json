@@ -3,28 +3,28 @@
     "category": "com.microchip.ide.project",
     "content": {
         "metaDataVersion": "1.1.0",
-        "name": "com.microchip.mcu8.mplabx.project.",
-        "version": " ",
-        "displayName": "  ",
-        "projectName": "",
-        "shortDescription": "",
+        "name": "com.microchip.mcu8.mplabx.project.pic18f16q40-guitar-tuner",
+        "version": "1.0.0",
+        "displayName": "PIC18F16Q40 Guitar Tuner",
+        "projectName": "pic18f16q40-guitar-tuner",
+        "shortDescription": "PIC18F16Q40 to perform frequency and note measurment of guitar strings using ADCC and other CIPs",
         "ide": {
-            "name": "",
-            "semverRange": ""
+            "name": "MPLABX",
+            "semverRange": ">=5.40.0"
         },
         "compiler": [
 			{
-				"name": "",
-				"semverRange": ""
+				"name": ""XC8",
+				"semverRange": "^2.20.0"
 			}
 		],
         "dfp": {
-            "name": "",
-            "semverRange": ""
+            "name": "PIC18F-Q_DFP",
+            "semverRange": "^1.5.124"
         },
         "configurator": {
-            "name": "",
-            "semverRange": ""
+            "name": "MCC",
+            "semverRange": ">=3.95.0"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -32,26 +32,44 @@
             "content": {
                 "metaDataVersion": "1.0.0",
                 "category": "com.microchip.device",
-                "name": "",
+                "name": "PIC18F16Q40",
                 "versionRange": "*"
             }
         },
-        "author": "",
+        "author": "Microchip",
         "subcategories": [
             "",
             [
-               "Peripherals", ""
+               "Peripherals", "TMR0"
             ],
             [
-               "Peripherals", ""
-            ]            			
+               "Peripherals", "ADCC"
+            ],
+            [
+               "Peripherals", "SPI"
+            ],
+            [
+               "Peripherals", "DMA"
+            ],
+            [
+               "Peripherals", "UART"
+            ],
+            [
+               "Peripherals", "PWM"
+            ]                			
         ],
         "peripherals": [
-            "",""
+            "TMR0","ADCC","SPI","DMA","PWM","UART"
         ],
         "keywords": [
-            "",
-            ""			
+            "MCC",
+            "audio",
+            "guitar",
+            "guitar tuner",
+            "cip",
+            "dma",
+            "ADC",
+			"memory"		
         ],
 		"additionalData": {
 			"longDescription": {
