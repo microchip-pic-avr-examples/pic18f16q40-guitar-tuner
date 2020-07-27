@@ -38,7 +38,7 @@
         },
         "author": "Microchip",
         "subcategories": [
-            "",
+            "MCC",
             [
                "Peripherals", "TMR0"
             ],
