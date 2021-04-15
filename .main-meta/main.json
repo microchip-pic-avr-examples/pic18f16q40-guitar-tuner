@@ -4,20 +4,20 @@
     "content": {
         "metaDataVersion": "1.1.0",
         "name": "com.microchip.mcu8.mplabx.project.pic18f16q40-guitar-tuner",
-        "version": "1.0.0",
+        "version": "1.0.1",
         "displayName": "PIC18F16Q40 Guitar Tuner",
         "projectName": "pic18f16q40-guitar-tuner",
         "shortDescription": "PIC18F16Q40 to perform frequency and note measurment of guitar strings using ADCC and other CIPs",
         "ide": {
-            "name": "MPLABX",
+            "name": "MPLAB X",
             "semverRange": ">=5.40.0"
         },
         "compiler": [
-			{
-				"name": "XC8",
-				"semverRange": "^2.20.0"
-			}
-		],
+            {
+                "name": "XC8",
+                "semverRange": "^2.20.0"
+            }
+        ],
         "dfp": {
             "name": "PIC18F-Q_DFP",
             "semverRange": "^1.5.124"
@@ -40,26 +40,37 @@
         "subcategories": [
             "MCC",
             [
-               "Peripherals", "TMR0"
+                "Peripherals",
+                "TMR0"
             ],
             [
-               "Peripherals", "ADCC"
+                "Peripherals",
+                "ADCC"
             ],
             [
-               "Peripherals", "SPI"
+                "Peripherals",
+                "SPI"
             ],
             [
-               "Peripherals", "DMA"
+                "Peripherals",
+                "DMA"
             ],
             [
-               "Peripherals", "UART"
+                "Peripherals",
+                "UART"
             ],
             [
-               "Peripherals", "PWM"
-            ]                			
+                "Peripherals",
+                "PWM"
+            ]
         ],
         "peripherals": [
-            "TMR0","ADCC","SPI","DMA","PWM","UART"
+            "TMR0",
+            "ADCC",
+            "SPI",
+            "DMA",
+            "PWM",
+            "UART"
         ],
         "keywords": [
             "MCC",
@@ -69,18 +80,18 @@
             "cip",
             "dma",
             "ADC",
-			"memory"		
+            "memory"
         ],
-		"additionalData": {
-			"longDescription": {
-				"metaDataVersion": "1.0.0",
-				"category": "com.microchip.portal.fileRef",
-				"content": {
-					"metaDataVersion": "1.0.0",
-					"fileName": "./README.md",
-					"mimeType": "text/markdown"
-				}
-			}
-		}
-	}
+        "additionalData": {
+            "longDescription": {
+                "metaDataVersion": "1.0.0",
+                "category": "com.microchip.portal.fileRef",
+                "content": {
+                    "metaDataVersion": "1.0.0",
+                    "fileName": "./README.md",
+                    "mimeType": "text/markdown"
+                }
+            }
+        }
+    }
 }
