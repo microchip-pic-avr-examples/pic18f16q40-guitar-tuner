@@ -1,18 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="65">
-  <logicalFolder name="root" displayName="root" projectFiles="true">
-    <logicalFolder name="HeaderFiles"
-                   displayName="Header Files"
-                   projectFiles="true">
-      <logicalFolder name="MCC Generated Files"
-                     displayName="MCC Generated Files"
-                     projectFiles="true">
-        <logicalFolder name="drivers" displayName="drivers" projectFiles="true">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><configurationDescriptor version="65">
+  <logicalFolder displayName="root" name="root" projectFiles="true">
+    <logicalFolder displayName="Header Files" name="HeaderFiles" projectFiles="true">
+      <logicalFolder displayName="MCC Generated Files" name="MCC Generated Files" projectFiles="true">
+        <logicalFolder displayName="drivers" name="drivers" projectFiles="true">
           <itemPath>mcc_generated_files/drivers/spi_master.h</itemPath>
         </logicalFolder>
-        <logicalFolder name="LCDMiniDrivers"
-                       displayName="LCDMiniDrivers"
-                       projectFiles="true">
+        <logicalFolder displayName="LCDMiniDrivers" name="LCDMiniDrivers" projectFiles="true">
           <itemPath>mcc_generated_files/LCDMiniDrivers/digipot.h</itemPath>
           <itemPath>mcc_generated_files/LCDMiniDrivers/lcd.h</itemPath>
           <itemPath>mcc_generated_files/LCDMiniDrivers/expander.h</itemPath>
@@ -32,22 +25,14 @@
       </logicalFolder>
       <itemPath>application.h</itemPath>
     </logicalFolder>
-    <logicalFolder name="LinkerScript"
-                   displayName="Linker Files"
-                   projectFiles="true">
+    <logicalFolder displayName="Linker Files" name="LinkerScript" projectFiles="true">
     </logicalFolder>
-    <logicalFolder name="SourceFiles"
-                   displayName="Source Files"
-                   projectFiles="true">
-      <logicalFolder name="MCC Generated Files"
-                     displayName="MCC Generated Files"
-                     projectFiles="true">
-        <logicalFolder name="drivers" displayName="drivers" projectFiles="true">
+    <logicalFolder displayName="Source Files" name="SourceFiles" projectFiles="true">
+      <logicalFolder displayName="MCC Generated Files" name="MCC Generated Files" projectFiles="true">
+        <logicalFolder displayName="drivers" name="drivers" projectFiles="true">
           <itemPath>mcc_generated_files/drivers/spi_master.c</itemPath>
         </logicalFolder>
-        <logicalFolder name="LCDMiniDrivers"
-                       displayName="LCDMiniDrivers"
-                       projectFiles="true">
+        <logicalFolder displayName="LCDMiniDrivers" name="LCDMiniDrivers" projectFiles="true">
           <itemPath>mcc_generated_files/LCDMiniDrivers/digpot.c</itemPath>
           <itemPath>mcc_generated_files/LCDMiniDrivers/lcd.c</itemPath>
           <itemPath>mcc_generated_files/LCDMiniDrivers/expander.c</itemPath>
@@ -68,9 +53,7 @@
       <itemPath>main.c</itemPath>
       <itemPath>application.c</itemPath>
     </logicalFolder>
-    <logicalFolder name="ExternalFiles"
-                   displayName="Important Files"
-                   projectFiles="false">
+    <logicalFolder displayName="Important Files" name="ExternalFiles" projectFiles="false">
       <itemPath>Makefile</itemPath>
       <itemPath>MyConfig.mc3</itemPath>
     </logicalFolder>
@@ -81,8 +64,8 @@
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>PIC18F16Q40</targetDevice>
-        <targetHeader></targetHeader>
-        <targetPluginBoard></targetPluginBoard>
+        <targetHeader/>
+        <targetPluginBoard/>
         <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC8</languageToolchain>
         <languageToolchainVersion>2.20</languageToolchainVersion>
@@ -103,16 +86,17 @@
         <loading>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
           <parseOnProdLoad>true</parseOnProdLoad>
-          <alternateLoadableFile></alternateLoadableFile>
+          <alternateLoadableFile/>
         </loading>
         <subordinates>
         </subordinates>
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
-        <makeCustomizationPreStep></makeCustomizationPreStep>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
+        <makeCustomizationPreStep/>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
-        <makeCustomizationPostStep></makeCustomizationPostStep>
+        <makeCustomizationPostStep/>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
@@ -197,6 +181,46 @@
         <property key="program-the-device-with-default-config-words" value="true"/>
         <property key="remove-unused-sections" value="true"/>
       </HI-TECH-LINK>
+      <Tool>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="Freeze Peripherals" value="true"/>
+        <property key="ToolFirmwareFilePath" value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UpdateOptions" value="ToolFirmwareOption.UseLatest"/>
+        <property key="ToolFirmwareToolPack" value="Press to select which tool pack to use"/>
+        <property key="communication.interface" value="${communication.interface.default}"/>
+        <property key="communication.interface.jtag" value="2wire"/>
+        <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram.ranges" value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="0-1ffff"/>
+        <property key="programoptions.donoteraseauxmem" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.pgmentry.voltage" value="low"/>
+        <property key="programoptions.pgmspeed" value="Med"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges" value="${memories.dataflash.default}"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value="380000-3803ff"/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.programcalmem" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
+        <property key="programoptionsedbg.eraseb4program" value="true"/>
+        <property key="toolpack.updateoptions" value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion" value="Press to select which tool pack to use"/>
+      </Tool>
       <XC8-CO>
         <property key="coverage-enable" value=""/>
       </XC8-CO>
@@ -217,14 +241,10 @@
       <pkob4hybrid>
         <property key="AutoSelectMemRanges" value="auto"/>
         <property key="Freeze Peripherals" value="true"/>
-        <property key="ToolFirmwareFilePath"
-                  value="Press to browse for a specific firmware version"/>
-        <property key="ToolFirmwareOption.UpdateOptions"
-                  value="ToolFirmwareOption.UseLatest"/>
-        <property key="ToolFirmwareToolPack"
-                  value="Press to select which tool pack to use"/>
-        <property key="communication.interface"
-                  value="${communication.interface.default}"/>
+        <property key="ToolFirmwareFilePath" value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UpdateOptions" value="ToolFirmwareOption.UseLatest"/>
+        <property key="ToolFirmwareToolPack" value="Press to select which tool pack to use"/>
+        <property key="communication.interface" value="${communication.interface.default}"/>
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
@@ -237,8 +257,7 @@
         <property key="memories.exclude.configurationmemory" value="true"/>
         <property key="memories.flashdata" value="true"/>
         <property key="memories.id" value="true"/>
-        <property key="memories.instruction.ram.ranges"
-                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.instruction.ram.ranges" value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-1ffff"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
@@ -246,8 +265,7 @@
         <property key="programoptions.pgmentry.voltage" value="low"/>
         <property key="programoptions.pgmspeed" value="Med"/>
         <property key="programoptions.preservedataflash" value="false"/>
-        <property key="programoptions.preservedataflash.ranges"
-                  value="${memories.dataflash.default}"/>
+        <property key="programoptions.preservedataflash.ranges" value="${memories.dataflash.default}"/>
         <property key="programoptions.preserveeeprom" value="false"/>
         <property key="programoptions.preserveeeprom.ranges" value="380000-3803ff"/>
         <property key="programoptions.preserveprogram.ranges" value=""/>
@@ -257,18 +275,16 @@
         <property key="programoptions.programuserotp" value="false"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
         <property key="programoptionsedbg.eraseb4program" value="true"/>
-        <property key="toolpack.updateoptions"
-                  value="toolpack.updateoptions.uselatestoolpack"/>
-        <property key="toolpack.updateoptions.packversion"
-                  value="Press to select which tool pack to use"/>
+        <property key="toolpack.updateoptions" value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion" value="Press to select which tool pack to use"/>
       </pkob4hybrid>
     </conf>
     <conf name="pro" type="2">
       <toolsSet>
         <developmentServer>localhost</developmentServer>
         <targetDevice>PIC18F16Q40</targetDevice>
-        <targetHeader></targetHeader>
-        <targetPluginBoard></targetPluginBoard>
+        <targetHeader/>
+        <targetPluginBoard/>
         <platformTool>pkob4hybrid</platformTool>
         <languageToolchain>XC8</languageToolchain>
         <languageToolchainVersion>2.20</languageToolchainVersion>
@@ -289,16 +305,17 @@
         <loading>
           <useAlternateLoadableFile>false</useAlternateLoadableFile>
           <parseOnProdLoad>true</parseOnProdLoad>
-          <alternateLoadableFile></alternateLoadableFile>
+          <alternateLoadableFile/>
         </loading>
         <subordinates>
         </subordinates>
       </compileType>
       <makeCustomizationType>
         <makeCustomizationPreStepEnabled>false</makeCustomizationPreStepEnabled>
-        <makeCustomizationPreStep></makeCustomizationPreStep>
+        <makeUseCleanTarget>false</makeUseCleanTarget>
+        <makeCustomizationPreStep/>
         <makeCustomizationPostStepEnabled>false</makeCustomizationPostStepEnabled>
-        <makeCustomizationPostStep></makeCustomizationPostStep>
+        <makeCustomizationPostStep/>
         <makeCustomizationPutChecksumInUserID>false</makeCustomizationPutChecksumInUserID>
         <makeCustomizationEnableLongLines>false</makeCustomizationEnableLongLines>
         <makeCustomizationNormalizeHexFile>false</makeCustomizationNormalizeHexFile>
@@ -383,6 +400,46 @@
         <property key="program-the-device-with-default-config-words" value="true"/>
         <property key="remove-unused-sections" value="true"/>
       </HI-TECH-LINK>
+      <Tool>
+        <property key="AutoSelectMemRanges" value="auto"/>
+        <property key="Freeze Peripherals" value="true"/>
+        <property key="ToolFirmwareFilePath" value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UpdateOptions" value="ToolFirmwareOption.UseLatest"/>
+        <property key="ToolFirmwareToolPack" value="Press to select which tool pack to use"/>
+        <property key="communication.interface" value="${communication.interface.default}"/>
+        <property key="communication.interface.jtag" value="2wire"/>
+        <property key="communication.speed" value="${communication.speed.default}"/>
+        <property key="debugoptions.useswbreakpoints" value="false"/>
+        <property key="memories.aux" value="false"/>
+        <property key="memories.bootflash" value="true"/>
+        <property key="memories.configurationmemory" value="true"/>
+        <property key="memories.configurationmemory2" value="true"/>
+        <property key="memories.dataflash" value="true"/>
+        <property key="memories.eeprom" value="true"/>
+        <property key="memories.exclude.configurationmemory" value="true"/>
+        <property key="memories.flashdata" value="true"/>
+        <property key="memories.id" value="true"/>
+        <property key="memories.instruction.ram.ranges" value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.programmemory" value="true"/>
+        <property key="memories.programmemory.ranges" value="0-1ffff"/>
+        <property key="programoptions.donoteraseauxmem" value="false"/>
+        <property key="programoptions.eraseb4program" value="true"/>
+        <property key="programoptions.pgmentry.voltage" value="low"/>
+        <property key="programoptions.pgmspeed" value="Med"/>
+        <property key="programoptions.preservedataflash" value="false"/>
+        <property key="programoptions.preservedataflash.ranges" value="${memories.dataflash.default}"/>
+        <property key="programoptions.preserveeeprom" value="false"/>
+        <property key="programoptions.preserveeeprom.ranges" value="380000-3803ff"/>
+        <property key="programoptions.preserveprogram.ranges" value=""/>
+        <property key="programoptions.preserveprogramrange" value="false"/>
+        <property key="programoptions.preserveuserid" value="false"/>
+        <property key="programoptions.programcalmem" value="false"/>
+        <property key="programoptions.programuserotp" value="false"/>
+        <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
+        <property key="programoptionsedbg.eraseb4program" value="true"/>
+        <property key="toolpack.updateoptions" value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion" value="Press to select which tool pack to use"/>
+      </Tool>
       <XC8-CO>
         <property key="coverage-enable" value=""/>
       </XC8-CO>
@@ -403,14 +460,10 @@
       <pkob4hybrid>
         <property key="AutoSelectMemRanges" value="auto"/>
         <property key="Freeze Peripherals" value="true"/>
-        <property key="ToolFirmwareFilePath"
-                  value="Press to browse for a specific firmware version"/>
-        <property key="ToolFirmwareOption.UpdateOptions"
-                  value="ToolFirmwareOption.UseLatest"/>
-        <property key="ToolFirmwareToolPack"
-                  value="Press to select which tool pack to use"/>
-        <property key="communication.interface"
-                  value="${communication.interface.default}"/>
+        <property key="ToolFirmwareFilePath" value="Press to browse for a specific firmware version"/>
+        <property key="ToolFirmwareOption.UpdateOptions" value="ToolFirmwareOption.UseLatest"/>
+        <property key="ToolFirmwareToolPack" value="Press to select which tool pack to use"/>
+        <property key="communication.interface" value="${communication.interface.default}"/>
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
@@ -423,8 +476,7 @@
         <property key="memories.exclude.configurationmemory" value="true"/>
         <property key="memories.flashdata" value="true"/>
         <property key="memories.id" value="true"/>
-        <property key="memories.instruction.ram.ranges"
-                  value="${memories.instruction.ram.ranges}"/>
+        <property key="memories.instruction.ram.ranges" value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="0-1ffff"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
@@ -432,8 +484,7 @@
         <property key="programoptions.pgmentry.voltage" value="low"/>
         <property key="programoptions.pgmspeed" value="Med"/>
         <property key="programoptions.preservedataflash" value="false"/>
-        <property key="programoptions.preservedataflash.ranges"
-                  value="${memories.dataflash.default}"/>
+        <property key="programoptions.preservedataflash.ranges" value="${memories.dataflash.default}"/>
         <property key="programoptions.preserveeeprom" value="false"/>
         <property key="programoptions.preserveeeprom.ranges" value="380000-3803ff"/>
         <property key="programoptions.preserveprogram.ranges" value=""/>
@@ -443,10 +494,8 @@
         <property key="programoptions.programuserotp" value="false"/>
         <property key="programoptions.testmodeentrymethod" value="VDDFirst"/>
         <property key="programoptionsedbg.eraseb4program" value="true"/>
-        <property key="toolpack.updateoptions"
-                  value="toolpack.updateoptions.uselatestoolpack"/>
-        <property key="toolpack.updateoptions.packversion"
-                  value="Press to select which tool pack to use"/>
+        <property key="toolpack.updateoptions" value="toolpack.updateoptions.uselatestoolpack"/>
+        <property key="toolpack.updateoptions.packversion" value="Press to select which tool pack to use"/>
       </pkob4hybrid>
     </conf>
   </confs>

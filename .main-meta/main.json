@@ -2,9 +2,9 @@
     "metaDataVersion": "1.0.0",
     "category": "com.microchip.ide.project",
     "content": {
-        "metaDataVersion": "1.1.0",
+        "metaDataVersion": "1.3.0",
         "name": "com.microchip.mcu8.mplabx.project.pic18f16q40-guitar-tuner",
-        "version": "1.0.1",
+        "version": "1.0.2",
         "displayName": "PIC18F16Q40 Guitar Tuner",
         "projectName": "pic18f16q40-guitar-tuner",
         "shortDescription": "PIC18F16Q40 to perform frequency and note measurment of guitar strings using ADCC and other CIPs",
@@ -37,35 +37,8 @@
             }
         },
         "author": "Microchip",
-        "subcategories": [
-            "MCC",
-            [
-                "Peripherals",
-                "TMR0"
-            ],
-            [
-                "Peripherals",
-                "ADCC"
-            ],
-            [
-                "Peripherals",
-                "SPI"
-            ],
-            [
-                "Peripherals",
-                "DMA"
-            ],
-            [
-                "Peripherals",
-                "UART"
-            ],
-            [
-                "Peripherals",
-                "PWM"
-            ]
-        ],
         "peripherals": [
-            "TMR0",
+            "TMR",
             "ADCC",
             "SPI",
             "DMA",
@@ -74,13 +47,11 @@
         ],
         "keywords": [
             "MCC",
-            "audio",
-            "guitar",
-            "guitar tuner",
-            "cip",
-            "dma",
+            "Audio",
+            "CIP",
+            "DMA",
             "ADC",
-            "memory"
+            "Memory"
         ],
         "additionalData": {
             "longDescription": {
