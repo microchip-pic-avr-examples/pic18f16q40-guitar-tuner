@@ -52,7 +52,7 @@ To measure the frequency of a guitar audio signal, an autocorrelation algorithm 
 
 Autocorrelation is the correlation of a signal with delayed copy of itself. Applying autocorrelation on a discrete-time signal with a particular delay value will produce a number that indicates how similar the signal is to itself at that delay. The autocorrelation function is performed by multiplying each sample of the original signal with the delayed version of the signal and summing the results. The function used for this application is shown below where d represents the time delay, N represents the total number of samples, and n is the index of the original signal. 
 
-<img src="images/autocorrelation_function.jpg" width = "400">
+<img src="images/autocorrelation_function.jpg" alt="MCHP" width="400"/></a>
 
 By applying this function for a range of time delays, a new autocorrelation signal is produced that will have peaks at the points where the signal is periodic. To determine the frequency of the original signal, the highest peak of the autocorrelation signal is found. The index of the highest peak in the autocorrelation signal represents the time delay where the signal is most periodic. Taking the inverse of this time delay value results in the frequency. In this application, the frequencies are precomputed and stored in a table to make the algorithm faster. The accuracy of this method is limited by the sample rate of the original signal. 
 
@@ -143,7 +143,7 @@ The UART module was used in this code example to optionally display debugging da
 An example of the Data Visualizer output is shown below:
 
 ### Data Visualizer Output
-<img src="images/data_visualizer.jpg" width="600">
+<img src="images/data_visualizer.jpg" alt="MCHP" width="600"/></a>
 
 ## Guitar Tuner LCD Mini Output Results:
 <img src="images/guitar-tuner.gif" alt="MCHP" width="450"/></a>
