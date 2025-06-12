@@ -1,15 +1,16 @@
- /*
- * MAIN Generated Driver File
- * 
- * @file main.c
- * 
- * @defgroup main MAIN
- * 
- * @brief This is the generated driver implementation file for the MAIN driver.
+/**
+ * SPI Type Definitions Header File
  *
- * @version MAIN Driver Version 1.0.2
+ * @file spi_polling_types.h
  *
- * @version Package Version: 3.1.2
+ * @defgroup spi SPI
+ *
+ * @version SPI Driver Version v3.2.0.
+ * 
+ * @version SPI Package Version v5.2.0.
+ *
+ * @brief This header file provides type definitions for the SPI module operation in Polling mode.
+ *
 */
 
 /*
@@ -32,28 +33,23 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include "application.h"
+
+#ifndef SPI_POLLING_TYPES_H
+#define	SPI_POLLING_TYPES_H
 
 
-int main(void)
-{
-    SYSTEM_Initialize();
-    SPI1_Open(LCD);
-          
-    lcd_setup();
-    lcd_setContrast(40);  // Contrast should be adjusted based on your particular display
+/**
+ * @ingroup spi
+ * @typedef struct spi_configuration_t
+ * @brief Holds register configurations for SPI module.
+ */
+typedef struct
+{ 
+    uint8_t con0; 
+    uint8_t con1; 
+    uint8_t con2; 
+    uint8_t baud; 
+    uint8_t clksel;
+} spi_configuration_t;
 
-    Display_Splash();
-    
-    DMA1_SetDestinationAddress((uint16_t)(&rawData));
-    DMA1_Enable();    
-    DMA1_TransferWithTriggerStart();
-    
-    while( 0 == PIR2bits.DMA1DCNTIF ); // Wait to get the first set of samples
-    
-    while(1)
-    {        
-        Note_Read();        
-    }    
-}
+#endif // SPI_POLLING_TYPES_H

@@ -1,15 +1,16 @@
- /*
- * MAIN Generated Driver File
+/**
+ * CLOCK Generated Driver Header File 
  * 
- * @file main.c
+ * @file clock.h
  * 
- * @defgroup main MAIN
+ * @defgroup clockdriver Clock Driver
  * 
- * @brief This is the generated driver implementation file for the MAIN driver.
+ * @brief This file contains the API prototypes and other data types for the Clock driver.
  *
- * @version MAIN Driver Version 1.0.2
+ * @version Driver Version 2.0.4
  *
- * @version Package Version: 3.1.2
+ * @version Package Version 4.3.7
+ *
 */
 
 /*
@@ -32,28 +33,29 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include "application.h"
 
+#ifndef CLOCK_H
+#define	CLOCK_H
 
-int main(void)
-{
-    SYSTEM_Initialize();
-    SPI1_Open(LCD);
-          
-    lcd_setup();
-    lcd_setContrast(40);  // Contrast should be adjusted based on your particular display
+#ifndef _XTAL_FREQ
+/**
+    @ingroup clock control 
+    @def system frequency
+    @misradeviation{@required, 21.1} Defining the system frequency using the _XTAL_FREQ macro is required by the XC8 compiler for the built-in delay functions.
+*/
+/* cppcheck-suppress misra-c2012-21.1 */
+#define _XTAL_FREQ 64000000U
+#endif
 
-    Display_Splash();
-    
-    DMA1_SetDestinationAddress((uint16_t)(&rawData));
-    DMA1_Enable();    
-    DMA1_TransferWithTriggerStart();
-    
-    while( 0 == PIR2bits.DMA1DCNTIF ); // Wait to get the first set of samples
-    
-    while(1)
-    {        
-        Note_Read();        
-    }    
-}
+/**
+ * @ingroup clockdriver
+ * @brief Initializes all the Internal Oscillator sources and the clock switch configurations. 
+ * @param None.
+ * @return None.
+ */
+void CLOCK_Initialize(void);
+
+#endif	/* CLOCK_H */
+/**
+ End of File
+*/

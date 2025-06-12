@@ -1,30 +1,33 @@
 <!-- Please do not change this html logo with link -->
 <a href="https://www.microchip.com" rel="nofollow"><img src="images/microchip.png" alt="MCHP" width="300"/></a>
 
-# OBJECTIVE:
-The “pic18f16q40-guitar-tuner” project highlights the advanced core independent peripherals found on the PIC18-Q40 family of devices to create a PIC18 powered guitar tuner. This project implements the 12-bit Analog to Digital Converter with Computation (ADCC) module to interface an analog microphone sensor which was used to measure sound frequency. The Direct Memory Access (DMA) module was used to transfer the ADCC result to memory core independently without any CPU intervention. The SPI and PWM modules were used to drive an LCD display to show the musical note output in real time, and the UART module was used to also display the musical notes output over a serial port in real time.
+# PIC18F16Q40 Guitar Tuner
 
-# Software Used:
-  - MPLAB® X IDE 5.40 or newer [(microchip.com/mplab/mplab-x-ide)](http://www.microchip.com/mplab/mplab-x-ide)
-  - MPLAB® XC8 2.20 or a newer compiler [(microchip.com/mplab/compilers)](http://www.microchip.com/mplab/compilers)
-  - MPLAB® Code Configurator (MCC) 3.95.0 or newer [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
-  - MPLAB® Code Configurator (MCC) Device Libraries PIC10 / PIC12 / PIC16 / PIC18 MCUs [(microchip.com/mplab/mplab-code-configurator)](https://www.microchip.com/mplab/mplab-code-configurator)
-  - Microchip PIC18F-Q Series Device Support (1.5.124) or newer [(packs.download.microchip.com/)](https://packs.download.microchip.com/)
+## Introduction
+This project highlights the advanced core independent peripherals found on the PIC18-Q40 family of MCUs to create a guitar tuner. This project uses the 12-bit Analog to Digital Converter with Computation (ADCC) module to interface an analog microphone sensor which was used to measure sound. The Direct Memory Access (DMA) module was used to transfer the ADCC result to memory core independently without any CPU intervention. The Serial Peripheral Interface (SPI) and Pulse Width Modulator (PWM) peripherals were used to drive an LCD display to show the musical note output in real time. The Universal Asynchronous Receiver Transmitter (UART) peripheral was used to show debugging data in MPLAB Data Visualizer.  
 
-# Hardware Used:
+## Software Used
+  - [MPLAB® X IDE 6.25 or newer](http://www.microchip.com/mplab/mplab-x-ide)
+  - [MPLAB® XC8 3.0 or a newer compiler](http://www.microchip.com/mplab/compilers)
+  - [MPLAB® Code Configurator (MCC) 5.7.1 or newer](https://www.microchip.com/mplab/mplab-code-configurator)
+  - [Microchip PIC18F-Q Series Device Support (PIC18-Q_DFP 1.28.451) or newer](https://packs.download.microchip.com/)
+
+## Hardware Used
   - [PIC18F16Q40 Microcontroller](https://www.microchip.com/wwwproducts/en/PIC18F16Q40)
   - [Curiosity Low Pin Count (LPC) Development Board Rev4](https://www.microchip.com/DevelopmentTools/ProductDetails/DM164137)     
   - [MikroElektronika MIC Click Board](https://www.mikroe.com/mic-click)
   - [MikroElektronika LCD Mini Click Board](https://www.mikroe.com/lcd-mini-click)  
 
 ## Demo Configuration
-The Curiosity Low Pin Count (LPC) Development Board was selected as the development platform for this code example. The guitar tuner display was implemented using the MikroElektronika LCD Mini Click Board and the MikroElektronika Mic Click Board. The Curiosity LPC Development Board only has one MikroBUS socket which was used for the LCD display, so the Mic Click Board was connected using a breadboard and jumper wires. The jumper wire connections needed to connect the microphone on the breadboard to the PIC18F16Q40 on the Curiosity LPC Development Board are as follows:
+The Curiosity Low Pin Count (LPC) Development Board was selected as the development platform for this code example. The guitar tuner display was implemented using the MikroElektronika LCD Mini Click Board and the MikroElektronika Mic Click Board was used for converting sound to appropriate analog voltages. The Curiosity LPC Development Board only has one MikroBUS socket which was used for the LCD display, so the Mic Click Board was connected using a breadboard and jumper wires. The jumper wire connections needed to connect the microphone on the breadboard to the PIC18F16Q40 on the Curiosity LPC Development Board are as follows:
 
 - Green wire: Connection between the analog output of the Mic Click Board to the corresponding positive ADC channel on the PIC microcontroller.
 
 - Red / black wires: 3.3V and Ground from the Curiosity LPC Development Board to the breadboard where the microphone audio sensor is placed.
 
-Additionally, a jumper wire (yellow wire) was used to connect the UART TX pin (RC4) of the PIC18F16Q40 to the TX connection on the Curiosity LPC Virtual COM port for serial communication. The following table summarizes the signal connections used in this code example:
+- Yellow Wire: Connect from UART TX pin (RC4) of the PIC18F16Q40 to the TX connection on the Curiosity LPC Virtual COM port for serial communication.
+
+The following table summarizes the signal connections used in this code example:
 
 |Signal                      | Microcontroller Pin    |
 |----------------------------| :--------------------: |
@@ -44,52 +47,103 @@ Additionally, a jumper wire (yellow wire) was used to connect the UART TX pin (R
 ### Curiosity LPC Project Setup:
 <img src="images/guitar-tuner.jpg" alt="MCHP" width="500"/></a>
 
-## Autocorrelation
-Before an analog signal can be stored and analyzed digitally, it must be converted to a digital signal which can be done in several steps. Based on the Nyquist-Shannon sampling theorem, the sampling frequency has to be at least double the maximum frequency present in the sampled signal. It is important that the sampling frequency is at least double the frequency of the signal being measured so that the specification of the signal will not change when it is in form of discrete data that will be stored in memory.
+## Frequency Measurement Algorithm 
+To measure the frequency of a guitar audio signal, an autocorrelation algorithm was used. Autocorrelation is necessary because the harmonics present in a guitar signal can make simpler algorithms such as measuring the zero-crossing of the signal inaccurate.  
 
-Autocorrelation is the correlation of a signal with delayed copy of itself as a function of delay. It is the similarity between observations as a function of the time lag between them. Autocorrelation of discrete-time signals was used in this code example to find the number of periodic repetitions of the main signal in the gathered data. The equation below shows the discrete autocorrelation R at lag l for a discrete-time signal.
+Autocorrelation is the correlation of a signal with delayed copy of itself. Applying autocorrelation on a discrete-time signal with a particular delay value will produce a number that indicates how similar the signal is to itself at that delay. The autocorrelation function is performed by multiplying each sample of the original signal with the delayed version of the signal and summing the results. The function used for this application is shown below where d represents the time delay, N represents the total number of samples, and n is the index of the original signal. 
 
-<img src="images/autocorrelation.PNG" alt="MCHP" width="200"/></a>
+<img src="images/autocorrelation_function.jpg" width = "400">
 
-## ADCC Module Configuration
-The ADCC module was used in this code example to measure the analog output of the microphone audio sensor. This peripheral was configured in Basic mode for this sensor interface, which allows the ADC to core independently perform conversions. Timer0 was used as a sampling timer for ADCC's auto-conversion trigger. The 12-bit ADC result is available in the ADRESL and ADRESH registers. The ADC conversion result was set to be left-aligned and the upper byte of the ADC conversion result was used as the input of the autocorrelation calculation. The MPLAB Code Configurator was used to quickly and easily setup the ADCC module for this sensor interface. The setup and configuration of the ADCC using MCC is shown in the figure below.
-
-### ADCC Basic Mode MCC Configuration:
-<img src="images/adcc-config.PNG" alt="MCHP" width="600"/></a>
-
-## DMA Module Configuration
-The DMA module was used in this code example to automatically transfer the ADC conversion result value from the ADRES register to device memory core independently. In firmware, the DMA is triggered as soon as an ADC conversion is complete (ADIF trigger) and the content of the ADRESH register is transferred to an array variable previously defined in the memory. The DMA Destination Pointer (DPTR) is then incremented in hardware and points to the next address of the array elements. Since the Source Message Size (SSZ) bit is set to '1', the DMA stops after the first transfer and waits for the next trigger to occur. The DMA was configured so that this cycle happens 512 times, then the calculation will be applied to the gathered data and DMA will be ready for another set of data transfers.
+By applying this function for a range of time delays, a new autocorrelation signal is produced that will have peaks at the points where the signal is periodic. To determine the frequency of the original signal, the highest peak of the autocorrelation signal is found. The index of the highest peak in the autocorrelation signal represents the time delay where the signal is most periodic. Taking the inverse of this time delay value results in the frequency. In this application, the frequencies are precomputed and stored in a table to make the algorithm faster. The accuracy of this method is limited by the sample rate of the original signal. 
 
 
-## Timer Module Configuration
-The TMR0 module was used in this code example to trigger the ADCC to perform conversions at a specific rate. The timer period is set to 112 uS to generate a sampling frequency of 8900 Hz. The figure below shows how the TMR0 module was configured in MCC.
+## ADCC 
+The ADCC module was used in this code example to measure the analog output of the microphone audio sensor. Timer0 was used as the ADC's auto-conversion trigger source, allowing samples to be captured at a steady rate of 8.9 kHz. Although the ADC has 12-bit resolution, only the upper 8 bits of result are used for the sake of increasing the speed of the autocorrelation calculations. The MCC settings for the ADC are shown below:
 
-### TMR0 MCC Configuration:
-<img src="images/tmr0-config.PNG" alt="MCHP" width="600"/></a>
+### ADCC MCC Settings:
 
-## LCDMini Library Configuration:
-The LCDMini Library in MCC was used to generate the initialization code and functional APIs needed to use the display. The library sets up the SPI module with the correct configuration to ensure proper communication between the PIC microcontroller and the display driver, and also provides a set of functional APIs that make getting started with the display quick and easy. To add the LCDMini Library to an MPLABX project, open MCC and navigate to the "Device Resources" section. Once inside the Device Resources section, select the “Mikro-E Clicks” drop down menu, select “Displays”, and then add in the "LCDMini" library. The functional APIs provided by the LCD Mini library in MCC handle all of the SPI communication between the PIC and the display driver. The SPI module was used in this code example to communicate with the LCD display to show the real-time frequency of the musical note that is being played.
-
-## PWM Module Configuration:
-The PWM module was used in this code example to control the brightness of the LCD display backlight on LCD Mini Click Board. The duty cycle of the PWM output signal is set to 70%. The following code snippet shows how to change the PWM output signal duty cycle using the APIs provided by MCC:
-```c
-PWM1_16BIT_SetSlice1Output1DutyCycleRegister(70);   // Setting LCD Brightness to 70%
-PWM1_16BIT_LoadBufferRegisters();
-```
-
-### PWM MCC Configuration:
-<img src="images/pwm-config.PNG" alt="MCHP" width="600"/></a>
+| ADC Setting                    |    Value     |
+|--------------------------------|-------------:|
+| TMR Dependency Selector        |  TMR0        |
+| Enable ADC                     |  Enabled     | 
+| Result Alignment               |  Left        |
+| Positive Input Channel         |  ANB7        |
+| Positive Voltage Reference     |  Vdd         |
+| Negative Voltage Reference     |  Vss         | 
+| Auto-Conversion Trigger Source |  TMR0        | 
+| Clock Source                   |  FOSC        | 
+| Clock Divider                  |  FOSC/64     | 
 
 
-## UART Module Configuration:
-The UART module was used in this code example as an alternative way of displaying the guitar tuner output results by printing the musical note symbol that is being played and the frequency of that note using a serial port. The UART module was configured using MCC in Asynchronous 8-bit mode with a baud rate of 115200. Only transmission was enabled, and the “Redirect STDIO to UART” checkbox was selected under the software settings tab to include the library needed for “printf” functions. The UART TX pin was selected as pin RC4 and connected to the TX pin of the Virtual COM port on the Curiosity LPC Development Board (yellow wire).
+## DMA 
+The DMA module was used in this code example to automatically transfer the ADC conversion results to data memory while the autocorrelation is being calculated. The DMA was configured to transfer the upper byte of the ADC conversion result every time an ADC conversion is finished. The DMA was set to automatically increment it's destination pointer to fill an array of 512 bytes in user memory. The MCC settings for the DMA are shown below: 
 
-### UART MCC Configuration:
-<img src="images/uart1-config.PNG" alt="MCHP" width="600"/></a>
+### DMA MCC Settings
+
+|   DMA Setting                  |    Value      |
+|--------------------------------|--------------:|
+| DMA Enable                     |  Disabled     |
+| DMA Instance Select            |  0            | 
+| Start Trigger Enable           |  Disabled     | 
+| Abort Trigger                  |  DMA1DCNT     | 
+| Abort Trigger Enable           |  Disabled     | 
+| Source Region                  |  SFR          | 
+| Source Module                  |  ADCC         | 
+| Source SFR                     |  ADRESH       |
+| Source Mode                    | unchanged     | 
+| Source Message Size            |  1            | 
+| Destination Region             | GPR           | 
+| Destination Size               | 0             | 
+| Destination Mode               | incremented   | 
+| Destination Message Size       | 512           | 
 
 
-## Guitar Tuner Serial Port Output Results:
-<img src="images/uart-output.PNG" alt="MCHP" width="500"/></a>
+## Timer0 
+The TMR0 module was used in this code example to trigger the ADCC to perform conversions at a specific rate. The timer period is set to 112 us to generate a sampling frequency of 8900 Hz. The MCC settings for TMR0 are shown below:
+
+### TMR0 MCC Settings
+
+|        TMR0 Settings           |  Value        | 
+|--------------------------------|--------------:|
+| Timer Enable                   | Enabled       | 
+| Clock Source                   | MFINTOSC      | 
+| Synchronization Enable         | Disabled      |
+| Prescaler                      |  1:1          |
+| Postscaler                     |  1:1          | 
+| Requested Period               |  112 us       | 
+ 
+
+## SPI 
+The SPI module was used to drive the LCD Mini Click Board. The LCD is driven by a I/O expander that communicates over SPI to save pins on the MCU. MCC was used to configure the SPI to run at 125 kHz in SPI Mode 0. 
+
+## PWM
+The PWM module was used in this code example to control the brightness of the LCD display backlight on LCD Mini Click Board. MCC was used to configure the PWM with a duty cycle of 70%. 
+
+## UART
+The UART module was used in this code example to optionally display debugging data using MPLAB Data Visualizer. To view the debugging data, the "DEBUG" configuration must be chosen in the MPLAB X project. MPLAB Data Visualizer can then be used to view the ADC samples along with the autocorrelation signal each time it is calculated. To view the data, open MPLAB Data Visualizer and load the file configuration file called "dataVisualizerConfig.dvws". The UART module was configured using MCC in Asynchronous 8-bit mode with a baud rate of 115200. The UART TX pin was selected as pin RC4 and connected to the TX pin of the Virtual COM port on the Curiosity LPC Development Board. The MCC settings for the UART are summarized below:
+
+### UART MCC Settings
+
+|    UART Setting                |   Value        |
+|--------------------------------|---------------:|
+|  Baud Rate                     |  115200        | 
+|  Parity                        |  None          | 
+|  Data Size                     |  8             |
+|  Stop Bits                     |  1             | 
+|  Flow Control Mode             |  None          | 
+|  Redirectd STDIO to UART       |  Disabled      | 
+|  Enable Receive                |  Disabled      | 
+|  Enable Transmit               |  Enabled       | 
+|  Auto-baud Detection           |  Disabled      | 
+|  Enable UART                   |  Enabled       | 
+ 
+
+
+
+An example of the Data Visualizer output is shown below:
+
+### Data Visualizer Output
+<img src="images/data_visualizer.jpg" width="600">
 
 ## Guitar Tuner LCD Mini Output Results:
 <img src="images/guitar-tuner.gif" alt="MCHP" width="450"/></a>

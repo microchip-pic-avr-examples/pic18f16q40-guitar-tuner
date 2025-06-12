@@ -6,135 +6,176 @@
  */
 
 #include "application.h"
+#include "frequencyTable.h"
+#include "noteTable.h"
+#include <string.h>
 
 /*
  Section: Variable Definitions
  */
-#define E4 329.63
-#define EL4 E4 - 5
-#define EH4 E4 + 5
 
-#define B3 246.94
-#define BL3 B3 - 5
-#define BH3 B3 + 5
+#define NUM_ADC_SAMPLES 512
+#define NUM_AUTOCORRELATION_SAMPLES 128
 
-#define G3 196
-#define GL3 G3 - 5
-#define GH3 G3 + 5
 
-#define D3 146.83
-#define DL3 D3 - 5
-#define DH3 D3 + 5
+struct dv_struct_t {
+    uint8_t trigger;
+    int8_t sample;
+    int32_t correlationSample;
+};
 
-#define A2 110
-#define AL2 A2 - 5
-#define AH2 A2 + 5
 
-#define E2 82.41
-#define EL2 E2 - 5
-#define EH2 E2 + 5
+int8_t offsetCorrectedData[NUM_ADC_SAMPLES] = { 0 };
+int32_t autocorrelation_buffer[NUM_ADC_SAMPLES] =  { 0 };
+struct dv_struct_t dv_data;
 
-#define NOTE_POSITION 6
 
-#define LENGTH 512
+void autocorrelation(int8_t * data, int32_t * autocorrelation_values, uint16_t len);
+uint16_t find_highest_peak(int32_t * values, uint16_t len, int32_t peakThreshold);
+void offsetCorrectData(uint8_t * data, int8_t * correctedData, uint8_t average, uint16_t len);
+uint8_t averageData(uint8_t * data, uint16_t len );
+void sendDebugData(void);
+void DV_Send(struct dv_struct_t * dv_data, uint8_t len);
 
-extern uint8_t rawData[512];
 
-const float sample_freq = 9137; // The sampling frequency is around 8900, considering the CPU and other peripheral, this number can be changed to optimize the calculation for the best result.
 
-int16_t period = 0;
-uint8_t p_status_chk = 0;
-int32_t new_sum;
-int32_t prev_sum;
-int16_t thld = 0;
-float frequency = 0;
-
-/*
- Section: Driver APIs
- */
-
-Display_Print_Splash(void) {
+void Display_Splash(void) {
     PWM1_16BIT_SetSlice1Output1DutyCycleRegister(70); // Setting LCD Brightness to 70%
     PWM1_16BIT_LoadBufferRegisters();
-    lcd_setContrast(0x40); // LCD Contrast
-    lcd_writeString("  PIC18F16Q40   ", 0);
-    lcd_writeString("  Guitar Tuner  ", 1);
+    lcd_writeString("  PIC18F16Q40   ",16, 0);    
+    lcd_writeString("  Guitar Tuner  ",16, 1);
     __delay_ms(3000); // Hold Splash Screen;
     lcd_returnHome();
-    lcd_clearDisplay(); // Clear the LCD
-    lcd_writeString("Play a string! ", 0);
-}
-
-void Note_Print(void) {
-    Note_Read();
-    samplingDone = false;
-    DMA1_StartTransferWithTrigger(); //Start the next set of DMA transfer
+    __delay_ms(2);
+    lcd_clearDisplay(); 
+    __delay_ms(2);
+    lcd_writeString("Play a string! ",15, 0);
 }
 
 void Note_Read(void) {
-    new_sum = 0;
-    p_status_chk = 0;
-    period = 0;
-    for (uint16_t i = 0; i < LENGTH; i++) {
-        // Autocorrelation
-        prev_sum = new_sum;
-        new_sum = 0;
-        for (uint16_t k = 0; k < LENGTH - i; k++) {
-            new_sum += ((rawData[k] - 128)*(rawData[k + i] - 128)) >> 8;
-        }
-        // Peak Detect State Machine
-        if ((p_status_chk == 2) && (new_sum <= prev_sum)) {
-            period = i;
-            p_status_chk = 3;
-        }
-        if ((p_status_chk == 1) && (new_sum > thld) && (new_sum > prev_sum)) {
-            p_status_chk = 2;
-        }
-        if (i == 0) {
-            thld = new_sum >> 1;
-            p_status_chk = 1;
+    
+    /* 
+     * The average is calculated for the entire array of samples and this value
+     * is subtracted from each sample. This removes any DC offset that could 
+     * cause inaccuracies in the autocorrelation calculation. The offset corrected
+     * data is saved in a different array in memory
+     */
+    uint8_t average = averageData(rawData, NUM_ADC_SAMPLES);
+    offsetCorrectData(rawData, offsetCorrectedData, average, NUM_ADC_SAMPLES);    
+    
+    /* 
+     * Once the offset corrected data has been saved, DMA can be used to get
+     * another set of samples while the autocorrelation is calculated
+     */
+    DMA1_TransferWithTriggerStart(); 
+    
+    autocorrelation(offsetCorrectedData, autocorrelation_buffer, NUM_AUTOCORRELATION_SAMPLES); 
+    
+#ifdef DEBUG
+    sendDebugData();
+#endif   
+    
+    uint16_t period = find_highest_peak(autocorrelation_buffer, NUM_AUTOCORRELATION_SAMPLES, 2000);
+    
+    char noteString[16];
+    char freqString[16];
+    
+    if( period == 0 ) {
+        lcd_writeString("Play a string! ", 15, 0);
+        lcd_writeString("               ",15,1);
+    }
+    else {
+        // make the string to display the current note being played
+        strcpy(noteString, "Note: ");
+        strcat(noteString, noteTable[period]);
+        strcat(noteString, "       ");
+
+        // make the string to display the frequency of the current note
+        strcpy(freqString,"f= ");
+        strcat(freqString, frequencyTable[period]);
+        strcat(freqString, "Hz  ");
+
+        lcd_writeString(noteString,15,0);
+        lcd_writeString(freqString,15, 1);
+    }    
+}
+
+
+uint16_t find_highest_peak(int32_t * values, uint16_t len, int32_t peakThreshold ) {
+    
+    
+    uint16_t peak = 0;
+    int32_t amplitude = 0;    
+
+    for(uint16_t i=1; i < (len -1); i++) {
+        
+        if( (values[i] > values[i-1]) && (values[i] > values[i+1]) ) {
+            if ( values[i] > amplitude ){
+                peak = i;
+                amplitude = values[i];
+            }
         }
     }
-    // Frequency identified in Hz
-    if (thld > 100) {
-        frequency = sample_freq / period;
-        Note_Display(frequency); // Call Note Display function
+    
+    if( amplitude < peakThreshold ) {
+        peak = 0;
+    }
+    
+    return peak;
+}
+
+void autocorrelation(int8_t * data, int32_t * autocorrelation_values, uint16_t len) {
+    for (uint16_t i = 0; i < len; i++) {
+        
+        int32_t sum = 0;
+        
+        for (uint16_t k = 0; k < NUM_ADC_SAMPLES - i; k++) {
+            sum += (int32_t)( data[k] * data[k + i] );
+        }
+        
+        autocorrelation_values[i] = sum;
     }
 }
 
-void Note_Display(float input_freq) {
-    bool note_flag = true;
-    char freq_str[16];
-    char note_str[] = "Note:           ";
-
-    if (EL4 < input_freq && input_freq <= EH4) {
-        note_str[NOTE_POSITION] = 'E';
-    } else if (BL3 < input_freq && input_freq <= BH3) {
-        note_str[NOTE_POSITION] = 'B';
-    } else if (GL3 < input_freq && input_freq <= GH3) {
-        note_str[NOTE_POSITION] = 'G';
-    } else if (DL3 < input_freq && input_freq <= DH3) {
-        note_str[NOTE_POSITION] = 'D';
-    } else if (AL2 < input_freq && input_freq <= AH2) {
-        note_str[NOTE_POSITION] = 'A';
-    } else if (EL2 < input_freq && input_freq <= EH2) {
-        note_str[NOTE_POSITION] = 'E';
-    } else {
-        note_flag = false;
-    }
-    if (note_flag) {
-        lcd_writeString(note_str, 0);
-        printf("%s \r\n", note_str);
-
-        sprintf(freq_str, "F= %.2f Hz    ", input_freq);
-        lcd_writeString(freq_str, 1);
-        printf("%s \r\n\n", freq_str);
-    } else {
-        lcd_clearDisplay(); // Clear the LCD
-        lcd_writeString("Play a string! ", 0);
-    }
+void offsetCorrectData(uint8_t * data, int8_t * correctedData, uint8_t average, uint16_t len) {
+    
+    uint16_t i = 0;
+    while( i < len){ 
+        correctedData[i] = (int8_t)( data[i] - average );
+        i++;
+    }    
 }
 
-void DMA1_CustomISR() {
-    samplingDone = true;
+uint8_t averageData(uint8_t * data, uint16_t len) {
+    uint32_t accumulator = 0;
+    
+    for( uint16_t i=0; i<len; i++) {
+        accumulator += data[i];
+    }
+    
+    return (uint8_t)( accumulator / len );   
+}
+
+void DV_Send( struct dv_struct_t * dv_data, uint8_t len) {
+    
+    uint8_t * ptr = (uint8_t *)(dv_data);
+    uint8_t i = 0;
+    
+    putch(0x33);
+    while( i++ < len ) {
+        putch(*ptr++);
+    }
+    putch(0xcc);
+}
+
+void sendDebugData(void) {
+    uint8_t trigger = 0;
+    for(uint16_t i=0; i<NUM_ADC_SAMPLES; i++) {
+        if( i == 0) trigger = 1;
+        else trigger = 0;
+        dv_data.trigger = trigger;
+        dv_data.sample = offsetCorrectedData[i];
+        dv_data.correlationSample = autocorrelation_buffer[i];
+        DV_Send(&dv_data, sizeof(dv_data));
+    }
 }

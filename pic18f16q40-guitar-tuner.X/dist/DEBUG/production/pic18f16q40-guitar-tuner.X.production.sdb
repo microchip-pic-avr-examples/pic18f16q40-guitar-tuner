@@ -1,0 +1,1659 @@
+[p GLOBOPT AUTOSTATIC IEEE_FLT IEEE_DBL LFSROK EMI_WORD ]
+[d version 1.1 ]
+[d edition pro ]
+[d chip 18F16Q40 ]
+[d frameptr 1249 ]
+"139 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/adc/src/adc.c
+[e E13412 . `uc
+ADC_CHANNEL_DAC2 58
+ADC_CHANNEL_VSS 59
+ADC_CHANNEL_TEMP 60
+ADC_CHANNEL_DAC1 61
+ADC_CHANNEL_FVR_BUFFER1 62
+ADC_CHANNEL_FVR_BUFFER2 63
+ADC_CHANNEL_ANB7 15
+]
+"164
+[e E13421 . `uc
+ADC_BASIC 0
+ADC_SERIES_ACCUMULATE 1
+ADC_SERIES_AVERAGE 2
+ADC_BURST_AVERAGE 3
+ADC_LOW_PASS_FILTER 4
+]
+"169
+[e E13435 . `uc
+ADC_NEVER_INTERRUPT 0
+ADC_BELOW_LOWER_THRESHOLD 1
+ADC_ABOVE_LOWER_THRESHOLD 2
+ADC_INSIDE_LOWER_AND_UPPER_THRESHOLD 3
+ADC_OUTSIDE_LOWER_AND_UPPER_THRESHOLD 4
+ADC_BELOW_UPPER_THRESHOLD 5
+ADC_ABOVE_UPPER_THRESHOLD 6
+ADC_ALWAYS_INTERRUPT 7
+]
+"308
+[e E13473 . `uc
+ADC_NOT_CONVERTING 0
+ADC_1ST_PRECHARGE 1
+ADC_1ST_ACQUISITION 2
+ADC_1ST_CONVERSION 3
+ADC_SUSPENDED_BETWEEN_1ST_AND_2ND_SAMPLE 4
+ADC_2ND_PRECHARGE 5
+ADC_2ND_ACQUISITION 6
+ADC_2ND_CONVERSION 7
+]
+"313
+[e E13445 . `uc
+ADC_TRIGGER_SOURCE_DISABLED 0
+ADC_TRIGGER_SOURCE_ADACTPPS 1
+ADC_TRIGGER_SOURCE_TMR0 2
+ADC_TRIGGER_SOURCE_TMR1 3
+ADC_TRIGGER_SOURCE_TMR2 4
+ADC_TRIGGER_SOURCE_TMR3 5
+ADC_TRIGGER_SOURCE_TMR4 6
+ADC_TRIGGER_SOURCE_SMT1_OVERFLOW 7
+ADC_TRIGGER_SOURCE_CCP1 8
+ADC_TRIGGER_SOURCE_PWM1_OUT1 9
+ADC_TRIGGER_SOURCE_PWM1_OUT2 10
+ADC_TRIGGER_SOURCE_PWM2_OUT1 11
+ADC_TRIGGER_SOURCE_PWM2_OUT2 12
+ADC_TRIGGER_SOURCE_PWM3_OUT1 13
+ADC_TRIGGER_SOURCE_PWM3_OUT2 14
+ADC_TRIGGER_SOURCE_NCO1 15
+ADC_TRIGGER_SOURCE_CMP1 16
+ADC_TRIGGER_SOURCE_CMP2 17
+ADC_TRIGGER_SOURCE_LOGICAL_OR_OF_ALL_IOC_FLAGS 18
+ADC_TRIGGER_SOURCE_CLC1 19
+ADC_TRIGGER_SOURCE_CLC2 20
+ADC_TRIGGER_SOURCE_CLC3 21
+ADC_TRIGGER_SOURCE_CLC4 22
+ADC_TRIGGER_SOURCE_ADERRH 23
+ADC_TRIGGER_SOURCE_ADRESH 24
+ADC_TRIGGER_SOURCE_ADPCH 25
+]
+"318
+[e E13428 . `uc
+ADC_FIRST_DERIVATIVE_OF_SINGLE_MEASUREMENT 0
+ADC_ACTUAL_RESULT_VS_SETPOINT 1
+ADC_ACTUAL_RESULT_VS_FILTERED_VALUE 2
+ADC_FIRST_DERIVATIVE_OF_FILTERED_VALUE 4
+ADC_FILTERED_VALUE_VS_SETPOINT 5
+]
+"42 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\main.c
+[e E14055 . `uc
+LCD 0
+SPI1_DEFAULT 1
+]
+"42 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\application.c
+[v _Display_Splash Display_Splash `(v  1 e 1 0 ]
+"55
+[v _Note_Read Note_Read `(v  1 e 1 0 ]
+"96
+[v _find_highest_peak find_highest_peak `(us  1 e 2 0 ]
+"119
+[v _autocorrelation autocorrelation `(v  1 e 1 0 ]
+"132
+[v _offsetCorrectData offsetCorrectData `(v  1 e 1 0 ]
+"141
+[v _averageData averageData `(uc  1 e 1 0 ]
+"151
+[v _DV_Send DV_Send `(v  1 e 1 0 ]
+"163
+[v _sendDebugData sendDebugData `(v  1 e 1 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\fleq.c
+[v ___fleq __fleq `(b  1 e 0 0 ]
+"62 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\float.c
+[v ___ftpack __ftpack `(f  1 e 4 0 ]
+"86 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\ftadd.c
+[v ___ftadd __ftadd `(f  1 e 4 0 ]
+"54 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\ftdiv.c
+[v ___ftdiv __ftdiv `(f  1 e 4 0 ]
+"62 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\ftmul.c
+[v ___ftmul __ftmul `(f  1 e 4 0 ]
+"19 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\ftsub.c
+[v ___ftsub __ftsub `(f  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\sprcadd.c
+[v ___fladd __fladd `(d  1 e 4 0 ]
+"245
+[v ___flsub __flsub `(d  1 e 4 0 ]
+"11 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"3 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\strcat.c
+[v _strcat strcat `(*.39uc  1 e 2 0 ]
+"3 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\strcpy.c
+[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
+"15 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\Umul32.c
+[v ___lmul __lmul `(ul  1 e 4 0 ]
+"91 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\Umul64.c
+[v ___omul __omul `(uo  1 e 8 0 ]
+"29 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\LCDMiniDrivers/digpot.c
+[v _digipot_setWiper digipot_setWiper `(v  1 e 1 0 ]
+"31 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\LCDMiniDrivers/expander.c
+[v _expander_sendByte expander_sendByte `(v  1 e 1 0 ]
+"42
+[v _expander_setup expander_setup `(v  1 e 1 0 ]
+"46
+[v _expander_setOutput expander_setOutput `(v  1 e 1 0 ]
+"31 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\LCDMiniDrivers/lcd.c
+[v _lcd_sendNibble lcd_sendNibble `(v  1 e 1 0 ]
+"39
+[v _lcd_sendByte lcd_sendByte `(v  1 e 1 0 ]
+"53
+[v _lcd_returnHome lcd_returnHome `(v  1 e 1 0 ]
+"57
+[v _lcd_clearDisplay lcd_clearDisplay `(v  1 e 1 0 ]
+"61
+[v _lcd_setAddr lcd_setAddr `(v  1 e 1 0 ]
+"65
+[v _lcd_writeChar lcd_writeChar `(v  1 e 1 0 ]
+"69
+[v _lcd_writeString lcd_writeString `(v  1 e 1 0 ]
+"79
+[v _lcd_setContrast lcd_setContrast `(v  1 e 1 0 ]
+"83
+[v _lcd_setup lcd_setup `(v  1 e 1 0 ]
+"39 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\main.c
+[v _main main `(i  1 e 2 0 ]
+"47 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/adc/src/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+"45 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/dma/src/dma1.c
+[v _DMA1_Initialize DMA1_Initialize `(v  1 e 1 0 ]
+"83
+[v _DMA1_Enable DMA1_Enable `(v  1 e 1 0 ]
+"113
+[v _DMA1_DestinationAddressSet DMA1_DestinationAddressSet `(v  1 e 1 0 ]
+"191
+[v _DMA1_TransferWithTriggerStart DMA1_TransferWithTriggerStart `(v  1 e 1 0 ]
+"50 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/pwm/src/pwm1_16bit.c
+[v _PWM1_16BIT_Initialize PWM1_16BIT_Initialize `(v  1 e 1 0 ]
+"137
+[v _PWM1_16BIT_SetSlice1Output1DutyCycleRegister PWM1_16BIT_SetSlice1Output1DutyCycleRegister `(v  1 e 1 0 ]
+"149
+[v _PWM1_16BIT_LoadBufferRegisters PWM1_16BIT_LoadBufferRegisters `(v  1 e 1 0 ]
+"189
+[v _PWM1_16BIT_Slice1Output1_SetInterruptHandler PWM1_16BIT_Slice1Output1_SetInterruptHandler `(v  1 e 1 0 ]
+"194
+[v _PWM1_16BIT_Slice1Output2_SetInterruptHandler PWM1_16BIT_Slice1Output2_SetInterruptHandler `(v  1 e 1 0 ]
+"199
+[v _PWM1_16BIT_Period_SetInterruptHandler PWM1_16BIT_Period_SetInterruptHandler `(v  1 e 1 0 ]
+"204
+[v _PWM1_16BIT_Slice1Output1_DefaultInterruptHandler PWM1_16BIT_Slice1Output1_DefaultInterruptHandler `(v  1 s 1 PWM1_16BIT_Slice1Output1_DefaultInterruptHandler ]
+"210
+[v _PWM1_16BIT_Slice1Output2_DefaultInterruptHandler PWM1_16BIT_Slice1Output2_DefaultInterruptHandler `(v  1 s 1 PWM1_16BIT_Slice1Output2_DefaultInterruptHandler ]
+"216
+[v _PWM1_16BIT_Period_DefaultInterruptHandler PWM1_16BIT_Period_DefaultInterruptHandler `(v  1 s 1 PWM1_16BIT_Period_DefaultInterruptHandler ]
+"71 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/spi/src/spi1.c
+[v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
+"119
+[v _SPI1_Deinitialize SPI1_Deinitialize `(v  1 e 1 0 ]
+"134
+[v _SPI1_Open SPI1_Open `(a  1 e 1 0 ]
+"155
+[v _SPI1_Close SPI1_Close `(v  1 e 1 0 ]
+"163
+[v _SPI1_Transfer SPI1_Transfer `(v  1 e 1 0 ]
+"195
+[v _SPI1_BufferExchange SPI1_BufferExchange `(v  1 e 1 0 ]
+"226
+[v _SPI1_BufferWrite SPI1_BufferWrite `(v  1 e 1 0 ]
+"255
+[v _SPI1_BufferRead SPI1_BufferRead `(v  1 e 1 0 ]
+"284
+[v _SPI1_ByteExchange SPI1_ByteExchange `(uc  1 e 1 0 ]
+"307
+[v _SPI1_ByteWrite SPI1_ByteWrite `(v  1 e 1 0 ]
+"319
+[v _SPI1_ByteRead SPI1_ByteRead `(uc  1 e 1 0 ]
+"331
+[v _SPI1_IsTxReady SPI1_IsTxReady `(a  1 e 1 0 ]
+"345
+[v _SPI1_IsRxReady SPI1_IsRxReady `(a  1 e 1 0 ]
+"39 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/system/src/clock.c
+[v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
+"42 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/system/src/interrupt.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+"83
+[v _INT0_CallBack INT0_CallBack `(v  1 e 1 0 ]
+"92
+[v _INT0_SetInterruptHandler INT0_SetInterruptHandler `(v  1 e 1 0 ]
+"96
+[v _INT0_DefaultInterruptHandler INT0_DefaultInterruptHandler `(v  1 e 1 0 ]
+"109
+[v _INT1_CallBack INT1_CallBack `(v  1 e 1 0 ]
+"118
+[v _INT1_SetInterruptHandler INT1_SetInterruptHandler `(v  1 e 1 0 ]
+"122
+[v _INT1_DefaultInterruptHandler INT1_DefaultInterruptHandler `(v  1 e 1 0 ]
+"135
+[v _INT2_CallBack INT2_CallBack `(v  1 e 1 0 ]
+"144
+[v _INT2_SetInterruptHandler INT2_SetInterruptHandler `(v  1 e 1 0 ]
+"148
+[v _INT2_DefaultInterruptHandler INT2_DefaultInterruptHandler `(v  1 e 1 0 ]
+"38 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/system/src/pins.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"50 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/system/src/system.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+"65
+[v _CPU_Initialize CPU_Initialize `(v  1 e 1 0 ]
+"90
+[v _SystemArbiter_Initialize SystemArbiter_Initialize `(v  1 e 1 0 ]
+"45 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/timer/src/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+"142
+[v _TMR0_DefaultCallback TMR0_DefaultCallback `(v  1 s 1 TMR0_DefaultCallback ]
+"69 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/uart/src/uart1.c
+[v _UART1_Initialize UART1_Initialize `(v  1 e 1 0 ]
+"202
+[v _UART1_IsRxReady UART1_IsRxReady `(a  1 e 1 0 ]
+"207
+[v _UART1_IsTxReady UART1_IsTxReady `(a  1 e 1 0 ]
+"249
+[v _UART1_Read UART1_Read `(uc  1 e 1 0 ]
+"255
+[v _UART1_Write UART1_Write `(v  1 e 1 0 ]
+"270
+[v _putch putch `(v  1 e 1 0 ]
+"283
+[v _UART1_DefaultFramingErrorCallback UART1_DefaultFramingErrorCallback `(v  1 s 1 UART1_DefaultFramingErrorCallback ]
+"288
+[v _UART1_DefaultOverrunErrorCallback UART1_DefaultOverrunErrorCallback `(v  1 s 1 UART1_DefaultOverrunErrorCallback ]
+"293
+[v _UART1_DefaultParityErrorCallback UART1_DefaultParityErrorCallback `(v  1 s 1 UART1_DefaultParityErrorCallback ]
+"298
+[v _UART1_FramingErrorCallbackRegister UART1_FramingErrorCallbackRegister `(v  1 e 1 0 ]
+"306
+[v _UART1_OverrunErrorCallbackRegister UART1_OverrunErrorCallbackRegister `(v  1 e 1 0 ]
+"314
+[v _UART1_ParityErrorCallbackRegister UART1_ParityErrorCallbackRegister `(v  1 e 1 0 ]
+"25 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X/application.h
+[v _rawData rawData `[512]uc  1 e 512 0 ]
+"28 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\application.c
+[v _offsetCorrectedData offsetCorrectedData `[512]c  1 e 512 0 ]
+"29
+[v _autocorrelation_buffer autocorrelation_buffer `[512]l  1 e 2048 0 ]
+[s S2412 dv_struct_t 6 `uc 1 trigger 1 0 `c 1 sample 1 1 `l 1 correlationSample 4 2 ]
+"30
+[v _dv_data dv_data `S2412  1 e 6 0 ]
+"3053 C:/Users/C16369/.mchp_packs/Microchip/PIC18F-Q_DFP/1.28.451/xc8\pic\include\proc/pic18f16q40.h
+[v _SPI1RXB SPI1RXB `VEuc  1 e 1 @128 ]
+"3123
+[v _SPI1TXB SPI1TXB `VEuc  1 e 1 @129 ]
+"3200
+[v _SPI1TCNTL SPI1TCNTL `VEuc  1 e 1 @130 ]
+"3220
+[v _SPI1TCNTH SPI1TCNTH `VEuc  1 e 1 @131 ]
+"3240
+[v _SPI1CON0 SPI1CON0 `VEuc  1 e 1 @132 ]
+[s S1339 . 1 `uc 1 BMODE 1 0 :1:0 
+`uc 1 MST 1 0 :1:1 
+`uc 1 LSBF 1 0 :1:2 
+`uc 1 . 1 0 :4:3 
+`uc 1 EN 1 0 :1:7 
+]
+"3261
+[s S1345 . 1 `uc 1 SPI1BMODE 1 0 :1:0 
+`uc 1 SPI1MST 1 0 :1:1 
+`uc 1 SPI1LSBF 1 0 :1:2 
+`uc 1 . 1 0 :4:3 
+`uc 1 SPI1SPIEN 1 0 :1:7 
+]
+[u S1351 . 1 `S1339 1 . 1 0 `S1345 1 . 1 0 ]
+[v _SPI1CON0bits SPI1CON0bits `VES1351  1 e 1 @132 ]
+"3306
+[v _SPI1CON1 SPI1CON1 `VEuc  1 e 1 @133 ]
+"3408
+[v _SPI1CON2 SPI1CON2 `VEuc  1 e 1 @134 ]
+[s S51 . 1 `uc 1 RXR 1 0 :1:0 
+`uc 1 TXR 1 0 :1:1 
+`uc 1 SSET 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 SSFLT 1 0 :1:6 
+`uc 1 BUSY 1 0 :1:7 
+]
+"3431
+[s S58 . 1 `uc 1 SPI1RXR 1 0 :1:0 
+`uc 1 SPI1TXR 1 0 :1:1 
+`uc 1 SPI1SSET 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 SPI1SSFLT 1 0 :1:6 
+`uc 1 SPI1BUSY 1 0 :1:7 
+]
+[u S65 . 1 `S51 1 . 1 0 `S58 1 . 1 0 ]
+[v _SPI1CON2bits SPI1CON2bits `VES65  1 e 1 @134 ]
+"3486
+[v _SPI1STATUS SPI1STATUS `VEuc  1 e 1 @135 ]
+[s S1398 . 1 `uc 1 RXBF 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 CLRBF 1 0 :1:2 
+`uc 1 RXRE 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 TXBE 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 TXWE 1 0 :1:7 
+]
+"3513
+[s S1407 . 1 `uc 1 SPI1RXBF 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 SPI1CLRBF 1 0 :1:2 
+`uc 1 SPI1RXRE 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 SPI1TXBE 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 SPI1TXWE 1 0 :1:7 
+]
+[u S1416 . 1 `S1398 1 . 1 0 `S1407 1 . 1 0 ]
+[v _SPI1STATUSbits SPI1STATUSbits `VES1416  1 e 1 @135 ]
+"3568
+[v _SPI1TWIDTH SPI1TWIDTH `VEuc  1 e 1 @136 ]
+"3608
+[v _SPI1BAUD SPI1BAUD `VEuc  1 e 1 @137 ]
+"3678
+[v _SPI1INTF SPI1INTF `VEuc  1 e 1 @138 ]
+[s S1460 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 TXUIF 1 0 :1:1 
+`uc 1 RXOIF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 EOSIF 1 0 :1:4 
+`uc 1 SOSIF 1 0 :1:5 
+`uc 1 TCZIF 1 0 :1:6 
+`uc 1 SRMTIF 1 0 :1:7 
+]
+"3705
+[s S1469 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 SPI1TXUIF 1 0 :1:1 
+`uc 1 SPI1RXOIF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 SPI1EOSIF 1 0 :1:4 
+`uc 1 SPI1SOSIF 1 0 :1:5 
+`uc 1 SPI1TCZIF 1 0 :1:6 
+`uc 1 SPI1SRMTIF 1 0 :1:7 
+]
+[u S1478 . 1 `S1460 1 . 1 0 `S1469 1 . 1 0 ]
+[v _SPI1INTFbits SPI1INTFbits `VES1478  1 e 1 @138 ]
+"3770
+[v _SPI1INTE SPI1INTE `VEuc  1 e 1 @139 ]
+"3862
+[v _SPI1CLK SPI1CLK `VEuc  1 e 1 @140 ]
+"4997
+[v _ACTCON ACTCON `VEuc  1 e 1 @172 ]
+"5067
+[v _OSCCON1 OSCCON1 `VEuc  1 e 1 @173 ]
+"5207
+[v _OSCCON3 OSCCON3 `VEuc  1 e 1 @175 ]
+"5247
+[v _OSCTUNE OSCTUNE `VEuc  1 e 1 @176 ]
+"5305
+[v _OSCFRQ OSCFRQ `VEuc  1 e 1 @177 ]
+"5507
+[v _OSCEN OSCEN `VEuc  1 e 1 @179 ]
+"5564
+[v _PRLOCK PRLOCK `VEuc  1 e 1 @180 ]
+[s S953 . 1 `uc 1 PRLOCKED 1 0 :1:0 
+]
+"5574
+[u S955 . 1 `S953 1 . 1 0 ]
+[v _PRLOCKbits PRLOCKbits `VES955  1 e 1 @180 ]
+"5584
+[v _SCANPR SCANPR `VEuc  1 e 1 @181 ]
+"5652
+[v _DMA1PR DMA1PR `VEuc  1 e 1 @182 ]
+"5720
+[v _DMA2PR DMA2PR `VEuc  1 e 1 @183 ]
+"5788
+[v _DMA3PR DMA3PR `VEuc  1 e 1 @184 ]
+"5856
+[v _DMA4PR DMA4PR `VEuc  1 e 1 @185 ]
+"5924
+[v _MAINPR MAINPR `VEuc  1 e 1 @190 ]
+"5992
+[v _ISRPR ISRPR `VEuc  1 e 1 @191 ]
+"6746
+[v _DMASELECT DMASELECT `VEuc  1 e 1 @232 ]
+"6850
+[v _DMAnDCNT DMAnDCNT `VEus  1 e 2 @234 ]
+"6973
+[v _DMAnDPTR DMAnDPTR `VEus  1 e 2 @236 ]
+"7120
+[v _DMAnDSZ DMAnDSZ `VEus  1 e 2 @238 ]
+"7243
+[v _DMAnDSA DMAnDSA `VEus  1 e 2 @240 ]
+"7390
+[v _DMAnSCNT DMAnSCNT `VEus  1 e 2 @242 ]
+"7514
+[v _DMAnSPTR DMAnSPTR `VEum  1 e 3 @244 ]
+"7720
+[v _DMAnSSZ DMAnSSZ `VEus  1 e 2 @247 ]
+"7844
+[v _DMAnSSA DMAnSSA `VEum  1 e 3 @249 ]
+"8050
+[v _DMAnCON0 DMAnCON0 `VEuc  1 e 1 @252 ]
+[s S888 . 1 `uc 1 XIP 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 AIRQEN 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 DGO 1 0 :1:5 
+`uc 1 SIRQEN 1 0 :1:6 
+`uc 1 EN 1 0 :1:7 
+]
+"8066
+[u S896 . 1 `S888 1 . 1 0 ]
+[v _DMAnCON0bits DMAnCON0bits `VES896  1 e 1 @252 ]
+"8096
+[v _DMAnCON1 DMAnCON1 `VEuc  1 e 1 @253 ]
+[s S907 . 1 `uc 1 SSTP 1 0 :1:0 
+`uc 1 SMODE 1 0 :2:1 
+`uc 1 SMR 1 0 :2:3 
+`uc 1 DSTP 1 0 :1:5 
+`uc 1 DMODE 1 0 :2:6 
+]
+"8110
+[u S913 . 1 `S907 1 . 1 0 ]
+[v _DMAnCON1bits DMAnCON1bits `VES913  1 e 1 @253 ]
+"8140
+[v _DMAnAIRQ DMAnAIRQ `VEuc  1 e 1 @254 ]
+"8204
+[v _DMAnSIRQ DMAnSIRQ `VEuc  1 e 1 @255 ]
+"8638
+[v _RB6PPS RB6PPS `VEuc  1 e 1 @527 ]
+"8938
+[v _RC4PPS RC4PPS `VEuc  1 e 1 @533 ]
+"8988
+[v _RC5PPS RC5PPS `VEuc  1 e 1 @534 ]
+"9088
+[v _RC7PPS RC7PPS `VEuc  1 e 1 @536 ]
+"11526
+[v _SPI1SDIPPS SPI1SDIPPS `VEuc  1 e 1 @619 ]
+"12462
+[v _RB6I2C RB6I2C `VEuc  1 e 1 @646 ]
+"12594
+[v _RB4I2C RB4I2C `VEuc  1 e 1 @647 ]
+"13936
+[v _U1RXB U1RXB `VEuc  1 e 1 @673 ]
+"13974
+[v _U1RXCHK U1RXCHK `VEuc  1 e 1 @674 ]
+"13994
+[v _U1TXB U1TXB `VEuc  1 e 1 @675 ]
+"14032
+[v _U1TXCHK U1TXCHK `VEuc  1 e 1 @676 ]
+"14059
+[v _U1P1L U1P1L `VEuc  1 e 1 @677 ]
+"14079
+[v _U1P1H U1P1H `VEuc  1 e 1 @678 ]
+"14106
+[v _U1P2L U1P2L `VEuc  1 e 1 @679 ]
+"14126
+[v _U1P2H U1P2H `VEuc  1 e 1 @680 ]
+"14153
+[v _U1P3L U1P3L `VEuc  1 e 1 @681 ]
+"14173
+[v _U1P3H U1P3H `VEuc  1 e 1 @682 ]
+"14193
+[v _U1CON0 U1CON0 `VEuc  1 e 1 @683 ]
+[s S2100 . 1 `uc 1 MODE0 1 0 :1:0 
+`uc 1 MODE1 1 0 :1:1 
+`uc 1 MODE2 1 0 :1:2 
+`uc 1 MODE3 1 0 :1:3 
+]
+"14226
+[s S2105 . 1 `uc 1 U1MODE 1 0 :4:0 
+`uc 1 U1RXEN 1 0 :1:4 
+`uc 1 U1TXEN 1 0 :1:5 
+`uc 1 U1ABDEN 1 0 :1:6 
+`uc 1 U1BRGS 1 0 :1:7 
+]
+[s S2111 . 1 `uc 1 U1MODE0 1 0 :1:0 
+`uc 1 U1MODE1 1 0 :1:1 
+`uc 1 U1MODE2 1 0 :1:2 
+`uc 1 U1MODE3 1 0 :1:3 
+]
+[s S2116 . 1 `uc 1 MODE 1 0 :4:0 
+`uc 1 RXEN 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 ABDEN 1 0 :1:6 
+`uc 1 BRGS 1 0 :1:7 
+]
+[u S2122 . 1 `S2100 1 . 1 0 `S2105 1 . 1 0 `S2111 1 . 1 0 `S2116 1 . 1 0 ]
+[v _U1CON0bits U1CON0bits `VES2122  1 e 1 @683 ]
+"14321
+[v _U1CON1 U1CON1 `VEuc  1 e 1 @684 ]
+[s S2064 . 1 `uc 1 SENDB 1 0 :1:0 
+`uc 1 BRKOVR 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 RXBIMD 1 0 :1:3 
+`uc 1 WUE 1 0 :1:4 
+`uc 1 . 1 0 :2:5 
+`uc 1 ON 1 0 :1:7 
+]
+"14346
+[s S2072 . 1 `uc 1 U1SENDB 1 0 :1:0 
+`uc 1 U1BRKOVR 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 U1RXBIMD 1 0 :1:3 
+`uc 1 U1WUE 1 0 :1:4 
+`uc 1 . 1 0 :2:5 
+`uc 1 U1ON 1 0 :1:7 
+]
+[u S2080 . 1 `S2064 1 . 1 0 `S2072 1 . 1 0 ]
+[v _U1CON1bits U1CON1bits `VES2080  1 e 1 @684 ]
+"14401
+[v _U1CON2 U1CON2 `VEuc  1 e 1 @685 ]
+"14550
+[v _U1BRGL U1BRGL `VEuc  1 e 1 @686 ]
+"14570
+[v _U1BRGH U1BRGH `VEuc  1 e 1 @687 ]
+"14590
+[v _U1FIFO U1FIFO `VEuc  1 e 1 @688 ]
+[s S2218 . 1 `uc 1 RXBF 1 0 :1:0 
+`uc 1 RXBE 1 0 :1:1 
+`uc 1 XON 1 0 :1:2 
+`uc 1 RXIDL 1 0 :1:3 
+`uc 1 TXBF 1 0 :1:4 
+`uc 1 TXBE 1 0 :1:5 
+`uc 1 STPMD 1 0 :1:6 
+`uc 1 TXWRE 1 0 :1:7 
+]
+"14625
+[s S2227 . 1 `uc 1 U1RXBF 1 0 :1:0 
+`uc 1 U1RXBE 1 0 :1:1 
+`uc 1 U1XON 1 0 :1:2 
+`uc 1 U1RXIDL 1 0 :1:3 
+`uc 1 U1TXBF 1 0 :1:4 
+`uc 1 U1TXBE 1 0 :1:5 
+`uc 1 U1STPMD 1 0 :1:6 
+`uc 1 U1TXWRE 1 0 :1:7 
+]
+[s S2236 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 U1RCIDL 1 0 :1:3 
+]
+[s S2239 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 RCIDL 1 0 :1:3 
+]
+[u S2242 . 1 `S2218 1 . 1 0 `S2227 1 . 1 0 `S2236 1 . 1 0 `S2239 1 . 1 0 ]
+[v _U1FIFObits U1FIFObits `VES2242  1 e 1 @688 ]
+"14720
+[v _U1UIR U1UIR `VEuc  1 e 1 @689 ]
+[s S2150 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 ABDIE 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 ABDIF 1 0 :1:6 
+`uc 1 WUIF 1 0 :1:7 
+]
+"14741
+[s S2156 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 U1ABDIE 1 0 :1:2 
+`uc 1 . 1 0 :3:3 
+`uc 1 U1ABDIF 1 0 :1:6 
+`uc 1 U1WUIF 1 0 :1:7 
+]
+[u S2162 . 1 `S2150 1 . 1 0 `S2156 1 . 1 0 ]
+[v _U1UIRbits U1UIRbits `VES2162  1 e 1 @689 ]
+"14776
+[v _U1ERRIR U1ERRIR `VEuc  1 e 1 @690 ]
+[s S2178 . 1 `uc 1 TXCIF 1 0 :1:0 
+`uc 1 RXFOIF 1 0 :1:1 
+`uc 1 RXBKIF 1 0 :1:2 
+`uc 1 FERIF 1 0 :1:3 
+`uc 1 CERIF 1 0 :1:4 
+`uc 1 ABDOVF 1 0 :1:5 
+`uc 1 PERIF 1 0 :1:6 
+`uc 1 TXMTIF 1 0 :1:7 
+]
+"14803
+[s S2187 . 1 `uc 1 U1TXCIF 1 0 :1:0 
+`uc 1 U1RXFOIF 1 0 :1:1 
+`uc 1 U1RXBKIF 1 0 :1:2 
+`uc 1 U1FERIF 1 0 :1:3 
+`uc 1 U1CERIF 1 0 :1:4 
+`uc 1 U1ABDOVF 1 0 :1:5 
+`uc 1 U1PERIF 1 0 :1:6 
+`uc 1 U1TXMTIF 1 0 :1:7 
+]
+[u S2196 . 1 `S2178 1 . 1 0 `S2187 1 . 1 0 ]
+[v _U1ERRIRbits U1ERRIRbits `VES2196  1 e 1 @690 ]
+"14888
+[v _U1ERRIE U1ERRIE `VEuc  1 e 1 @691 ]
+"19446
+[v _TMR0L TMR0L `VEuc  1 e 1 @792 ]
+"19584
+[v _TMR0H TMR0H `VEuc  1 e 1 @793 ]
+"19838
+[v _T0CON0 T0CON0 `VEuc  1 e 1 @794 ]
+[s S1912 . 1 `uc 1 OUTPS 1 0 :4:0 
+`uc 1 MD16 1 0 :1:4 
+`uc 1 OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 EN 1 0 :1:7 
+]
+"19872
+[s S1918 . 1 `uc 1 T0OUTPS 1 0 :4:0 
+`uc 1 T0MD16 1 0 :1:4 
+`uc 1 T0OUT 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 T0EN 1 0 :1:7 
+]
+[s S1924 . 1 `uc 1 OUTPS0 1 0 :1:0 
+`uc 1 OUTPS1 1 0 :1:1 
+`uc 1 OUTPS2 1 0 :1:2 
+`uc 1 OUTPS3 1 0 :1:3 
+`uc 1 T016BIT 1 0 :1:4 
+]
+[s S1930 . 1 `uc 1 T0OUTPS0 1 0 :1:0 
+`uc 1 T0OUTPS1 1 0 :1:1 
+`uc 1 T0OUTPS2 1 0 :1:2 
+`uc 1 T0OUTPS3 1 0 :1:3 
+]
+[u S1935 . 1 `S1912 1 . 1 0 `S1918 1 . 1 0 `S1924 1 . 1 0 `S1930 1 . 1 0 ]
+[v _T0CON0bits T0CON0bits `VES1935  1 e 1 @794 ]
+"19962
+[v _T0CON1 T0CON1 `VEuc  1 e 1 @795 ]
+"27314
+[v _ADCP ADCP `VEuc  1 e 1 @984 ]
+[s S672 . 1 `uc 1 CPRDY 1 0 :1:0 
+`uc 1 . 1 0 :6:1 
+`uc 1 ON 1 0 :1:7 
+]
+"27379
+[s S676 . 1 `uc 1 ADCPRDY 1 0 :1:0 
+`uc 1 . 1 0 :6:1 
+`uc 1 CPON 1 0 :1:7 
+]
+[s S680 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 ADCPON 1 0 :1:7 
+]
+[u S683 . 1 `S672 1 . 1 0 `S676 1 . 1 0 `S680 1 . 1 0 ]
+[v _ADCPbits ADCPbits `VES683  1 e 1 @984 ]
+"27416
+[v _ADLTHL ADLTHL `VEuc  1 e 1 @985 ]
+"27544
+[v _ADLTHH ADLTHH `VEuc  1 e 1 @986 ]
+"27679
+[v _ADUTHL ADUTHL `VEuc  1 e 1 @987 ]
+"27807
+[v _ADUTHH ADUTHH `VEuc  1 e 1 @988 ]
+"27942
+[v _ADERRL ADERRL `VEuc  1 e 1 @989 ]
+"28070
+[v _ADERRH ADERRH `VEuc  1 e 1 @990 ]
+"28205
+[v _ADSTPTL ADSTPTL `VEuc  1 e 1 @991 ]
+"28333
+[v _ADSTPTH ADSTPTH `VEuc  1 e 1 @992 ]
+"28468
+[v _ADFLTRL ADFLTRL `VEuc  1 e 1 @993 ]
+"28596
+[v _ADFLTRH ADFLTRH `VEuc  1 e 1 @994 ]
+"28733
+[v _ADACCL ADACCL `VEuc  1 e 1 @995 ]
+"28861
+[v _ADACCH ADACCH `VEuc  1 e 1 @996 ]
+"28989
+[v _ADACCU ADACCU `VEuc  1 e 1 @997 ]
+"29117
+[v _ADCNT ADCNT `VEuc  1 e 1 @998 ]
+"29245
+[v _ADRPT ADRPT `VEuc  1 e 1 @999 ]
+"29380
+[v _ADPREVL ADPREVL `VEuc  1 e 1 @1000 ]
+"29508
+[v _ADPREVH ADPREVH `VEuc  1 e 1 @1001 ]
+"29643
+[v _ADRESL ADRESL `VEuc  1 e 1 @1002 ]
+"29771
+[v _ADRESH ADRESH `VEuc  1 e 1 @1003 ]
+"29891
+[v _ADPCH ADPCH `VEuc  1 e 1 @1004 ]
+"29956
+[v _ADACQL ADACQL `VEuc  1 e 1 @1006 ]
+"30084
+[v _ADACQH ADACQH `VEuc  1 e 1 @1007 ]
+"30176
+[v _ADCAP ADCAP `VEuc  1 e 1 @1008 ]
+"30235
+[v _ADPREL ADPREL `VEuc  1 e 1 @1009 ]
+"30363
+[v _ADPREH ADPREH `VEuc  1 e 1 @1010 ]
+"30455
+[v _ADCON0 ADCON0 `VEuc  1 e 1 @1011 ]
+[s S220 . 1 `uc 1 GO 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 FM 1 0 :2:2 
+`uc 1 CS 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 CONT 1 0 :1:6 
+`uc 1 ON 1 0 :1:7 
+]
+"30495
+[s S228 . 1 `uc 1 ADGO 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFM 1 0 :2:2 
+`uc 1 ADCS 1 0 :1:4 
+`uc 1 . 1 0 :1:5 
+`uc 1 ADCONT 1 0 :1:6 
+`uc 1 ADON 1 0 :1:7 
+]
+[s S236 . 1 `uc 1 DONE 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 FM0 1 0 :1:2 
+`uc 1 FM1 1 0 :1:3 
+]
+[s S241 . 1 `uc 1 GO_NOT_DONE 1 0 :1:0 
+]
+[s S243 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 ADFM0 1 0 :1:2 
+`uc 1 ADFM1 1 0 :1:3 
+]
+[u S248 . 1 `S220 1 . 1 0 `S228 1 . 1 0 `S236 1 . 1 0 `S241 1 . 1 0 `S243 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES248  1 e 1 @1011 ]
+"30585
+[v _ADCON1 ADCON1 `VEuc  1 e 1 @1012 ]
+[s S602 . 1 `uc 1 DSEN 1 0 :1:0 
+`uc 1 . 1 0 :4:1 
+`uc 1 GPOL 1 0 :1:5 
+`uc 1 IPEN 1 0 :1:6 
+`uc 1 PPOL 1 0 :1:7 
+]
+"30606
+[s S608 . 1 `uc 1 ADDSEN 1 0 :1:0 
+`uc 1 . 1 0 :4:1 
+`uc 1 ADGPOL 1 0 :1:5 
+`uc 1 ADIPEN 1 0 :1:6 
+`uc 1 ADPPOL 1 0 :1:7 
+]
+[u S614 . 1 `S602 1 . 1 0 `S608 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES614  1 e 1 @1012 ]
+"30651
+[v _ADCON2 ADCON2 `VEuc  1 e 1 @1013 ]
+[s S414 . 1 `uc 1 MD 1 0 :3:0 
+`uc 1 ACLR 1 0 :1:3 
+`uc 1 CRS 1 0 :3:4 
+`uc 1 PSIS 1 0 :1:7 
+]
+"30688
+[s S419 . 1 `uc 1 ADMD0 1 0 :1:0 
+`uc 1 ADMD1 1 0 :1:1 
+`uc 1 ADMD2 1 0 :1:2 
+`uc 1 ADACLR 1 0 :1:3 
+`uc 1 ADCRS0 1 0 :1:4 
+`uc 1 ADCRS1 1 0 :1:5 
+`uc 1 ADCRS2 1 0 :1:6 
+`uc 1 ADPSIS 1 0 :1:7 
+]
+[s S428 . 1 `uc 1 ADMD 1 0 :3:0 
+`uc 1 . 1 0 :1:3 
+`uc 1 ADCRS 1 0 :3:4 
+]
+[s S432 . 1 `uc 1 MD0 1 0 :1:0 
+`uc 1 MD1 1 0 :1:1 
+`uc 1 MD2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 CRS0 1 0 :1:4 
+`uc 1 CRS1 1 0 :1:5 
+`uc 1 CRS2 1 0 :1:6 
+]
+[u S440 . 1 `S414 1 . 1 0 `S419 1 . 1 0 `S428 1 . 1 0 `S432 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES440  1 e 1 @1013 ]
+"30793
+[v _ADCON3 ADCON3 `VEuc  1 e 1 @1014 ]
+[s S481 . 1 `uc 1 TMD 1 0 :3:0 
+`uc 1 SOI 1 0 :1:3 
+`uc 1 CALC 1 0 :3:4 
+]
+"30828
+[s S485 . 1 `uc 1 ADTMD0 1 0 :1:0 
+`uc 1 ADTMD1 1 0 :1:1 
+`uc 1 ADTMD2 1 0 :1:2 
+`uc 1 ADSOI 1 0 :1:3 
+`uc 1 ADCALC0 1 0 :1:4 
+`uc 1 ADCALC1 1 0 :1:5 
+`uc 1 ADCALC2 1 0 :1:6 
+]
+[s S493 . 1 `uc 1 ADTMD 1 0 :3:0 
+`uc 1 . 1 0 :1:3 
+`uc 1 ADCALC 1 0 :3:4 
+]
+[s S497 . 1 `uc 1 TMD0 1 0 :1:0 
+`uc 1 TMD1 1 0 :1:1 
+`uc 1 TMD2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 CALC0 1 0 :1:4 
+`uc 1 CALC1 1 0 :1:5 
+`uc 1 CALC2 1 0 :1:6 
+]
+[u S505 . 1 `S481 1 . 1 0 `S485 1 . 1 0 `S493 1 . 1 0 `S497 1 . 1 0 ]
+[v _ADCON3bits ADCON3bits `VES505  1 e 1 @1014 ]
+"30923
+[v _ADSTAT ADSTAT `VEuc  1 e 1 @1015 ]
+[s S538 . 1 `uc 1 STAT 1 0 :3:0 
+`uc 1 . 1 0 :1:3 
+`uc 1 MATH 1 0 :1:4 
+`uc 1 LTHR 1 0 :1:5 
+`uc 1 UTHR 1 0 :1:6 
+`uc 1 AOV 1 0 :1:7 
+]
+"30960
+[s S545 . 1 `uc 1 ADSTAT0 1 0 :1:0 
+`uc 1 ADSTAT1 1 0 :1:1 
+`uc 1 ADSTAT2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 ADMATH 1 0 :1:4 
+`uc 1 ADLTHR 1 0 :1:5 
+`uc 1 ADUTHR 1 0 :1:6 
+`uc 1 ADAOV 1 0 :1:7 
+]
+[s S554 . 1 `uc 1 ADSTAT 1 0 :3:0 
+`uc 1 . 1 0 :4:3 
+`uc 1 ADOV 1 0 :1:7 
+]
+[s S558 . 1 `uc 1 STAT0 1 0 :1:0 
+`uc 1 STAT1 1 0 :1:1 
+`uc 1 STAT2 1 0 :1:2 
+`uc 1 . 1 0 :4:3 
+`uc 1 OV 1 0 :1:7 
+]
+[u S564 . 1 `S538 1 . 1 0 `S545 1 . 1 0 `S554 1 . 1 0 `S558 1 . 1 0 ]
+[v _ADSTATbits ADSTATbits `VES564  1 e 1 @1015 ]
+"31055
+[v _ADREF ADREF `VEuc  1 e 1 @1016 ]
+"31195
+[v _ADACT ADACT `VEuc  1 e 1 @1017 ]
+"31287
+[v _ADCLK ADCLK `VEuc  1 e 1 @1018 ]
+"31391
+[v _ANSELA ANSELA `VEuc  1 e 1 @1024 ]
+"31436
+[v _WPUA WPUA `VEuc  1 e 1 @1025 ]
+"31486
+[v _ODCONA ODCONA `VEuc  1 e 1 @1026 ]
+"31531
+[v _SLRCONA SLRCONA `VEuc  1 e 1 @1027 ]
+"31576
+[v _INLVLA INLVLA `VEuc  1 e 1 @1028 ]
+"31626
+[v _IOCAP IOCAP `VEuc  1 e 1 @1029 ]
+"31676
+[v _IOCAN IOCAN `VEuc  1 e 1 @1030 ]
+"31726
+[v _IOCAF IOCAF `VEuc  1 e 1 @1031 ]
+"31776
+[v _ANSELB ANSELB `VEuc  1 e 1 @1032 ]
+"31815
+[v _WPUB WPUB `VEuc  1 e 1 @1033 ]
+"31854
+[v _ODCONB ODCONB `VEuc  1 e 1 @1034 ]
+"31893
+[v _SLRCONB SLRCONB `VEuc  1 e 1 @1035 ]
+"31932
+[v _INLVLB INLVLB `VEuc  1 e 1 @1036 ]
+"31971
+[v _IOCBP IOCBP `VEuc  1 e 1 @1037 ]
+"32010
+[v _IOCBN IOCBN `VEuc  1 e 1 @1038 ]
+"32049
+[v _IOCBF IOCBF `VEuc  1 e 1 @1039 ]
+"32088
+[v _ANSELC ANSELC `VEuc  1 e 1 @1040 ]
+"32150
+[v _WPUC WPUC `VEuc  1 e 1 @1041 ]
+"32212
+[v _ODCONC ODCONC `VEuc  1 e 1 @1042 ]
+"32274
+[v _SLRCONC SLRCONC `VEuc  1 e 1 @1043 ]
+"32336
+[v _INLVLC INLVLC `VEuc  1 e 1 @1044 ]
+"32398
+[v _IOCCP IOCCP `VEuc  1 e 1 @1045 ]
+"32460
+[v _IOCCN IOCCN `VEuc  1 e 1 @1046 ]
+"32522
+[v _IOCCF IOCCF `VEuc  1 e 1 @1047 ]
+"33906
+[v _PWM1ERS PWM1ERS `VEuc  1 e 1 @1120 ]
+"33976
+[v _PWM1CLK PWM1CLK `VEuc  1 e 1 @1121 ]
+"34046
+[v _PWM1LDS PWM1LDS `VEuc  1 e 1 @1122 ]
+"34123
+[v _PWM1PRL PWM1PRL `VEuc  1 e 1 @1123 ]
+"34143
+[v _PWM1PRH PWM1PRH `VEuc  1 e 1 @1124 ]
+"34163
+[v _PWM1CPRE PWM1CPRE `VEuc  1 e 1 @1125 ]
+"34183
+[v _PWM1PIPOS PWM1PIPOS `VEuc  1 e 1 @1126 ]
+"34203
+[v _PWM1GIR PWM1GIR `VEuc  1 e 1 @1127 ]
+[s S1050 . 1 `uc 1 S1P1IF 1 0 :1:0 
+`uc 1 S1P2IF 1 0 :1:1 
+]
+"34214
+[u S1053 . 1 `S1050 1 . 1 0 ]
+"34214
+"34214
+[v _PWM1GIRbits PWM1GIRbits `VES1053  1 e 1 @1127 ]
+"34229
+[v _PWM1GIE PWM1GIE `VEuc  1 e 1 @1128 ]
+[s S1126 . 1 `uc 1 S1P1IE 1 0 :1:0 
+`uc 1 S1P2IE 1 0 :1:1 
+]
+"34240
+[u S1129 . 1 `S1126 1 . 1 0 ]
+"34240
+"34240
+[v _PWM1GIEbits PWM1GIEbits `VES1129  1 e 1 @1128 ]
+"34255
+[v _PWM1CON PWM1CON `VEuc  1 e 1 @1129 ]
+[s S1111 . 1 `uc 1 ERSNOW 1 0 :1:0 
+`uc 1 ERSPOL 1 0 :1:1 
+`uc 1 LD 1 0 :1:2 
+`uc 1 . 1 0 :4:3 
+`uc 1 EN 1 0 :1:7 
+]
+"34269
+[u S1117 . 1 `S1111 1 . 1 0 ]
+"34269
+"34269
+[v _PWM1CONbits PWM1CONbits `VES1117  1 e 1 @1129 ]
+"34294
+[v _PWM1S1CFG PWM1S1CFG `VEuc  1 e 1 @1130 ]
+"34360
+[v _PWM1S1P1L PWM1S1P1L `VEuc  1 e 1 @1131 ]
+"34380
+[v _PWM1S1P1H PWM1S1P1H `VEuc  1 e 1 @1132 ]
+"34407
+[v _PWM1S1P2L PWM1S1P2L `VEuc  1 e 1 @1133 ]
+"34427
+[v _PWM1S1P2H PWM1S1P2H `VEuc  1 e 1 @1134 ]
+[s S335 . 1 `uc 1 INT0IE 1 0 :1:0 
+`uc 1 ZCDIE 1 0 :1:1 
+`uc 1 ADIE 1 0 :1:2 
+`uc 1 ACTIE 1 0 :1:3 
+`uc 1 C1IE 1 0 :1:4 
+`uc 1 SMT1IE 1 0 :1:5 
+`uc 1 SMT1PRAIE 1 0 :1:6 
+`uc 1 SMT1PWAIE 1 0 :1:7 
+]
+"35676
+[s S344 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 CM1IE 1 0 :1:4 
+]
+"35676
+[u S347 . 1 `S335 1 . 1 0 `S344 1 . 1 0 ]
+"35676
+"35676
+[v _PIE1bits PIE1bits `VES347  1 e 1 @1193 ]
+[s S380 . 1 `uc 1 ADTIE 1 0 :1:0 
+`uc 1 . 1 0 :3:1 
+`uc 1 DMA1SCNTIE 1 0 :1:4 
+`uc 1 DMA1DCNTIE 1 0 :1:5 
+`uc 1 DMA1ORIE 1 0 :1:6 
+`uc 1 DMA1AIE 1 0 :1:7 
+]
+"35741
+[u S387 . 1 `S380 1 . 1 0 ]
+"35741
+"35741
+[v _PIE2bits PIE2bits `VES387  1 e 1 @1194 ]
+[s S1367 . 1 `uc 1 SPI1RXIE 1 0 :1:0 
+`uc 1 SPI1TXIE 1 0 :1:1 
+`uc 1 SPI1IE 1 0 :1:2 
+`uc 1 TMR2IE 1 0 :1:3 
+`uc 1 TMR1IE 1 0 :1:4 
+`uc 1 TMR1GIE 1 0 :1:5 
+`uc 1 CCP1IE 1 0 :1:6 
+`uc 1 TMR0IE 1 0 :1:7 
+]
+"35788
+[u S1376 . 1 `S1367 1 . 1 0 ]
+"35788
+"35788
+[v _PIE3bits PIE3bits `VES1376  1 e 1 @1195 ]
+[s S1059 . 1 `uc 1 U1RXIE 1 0 :1:0 
+`uc 1 U1TXIE 1 0 :1:1 
+`uc 1 U1EIE 1 0 :1:2 
+`uc 1 U1IE 1 0 :1:3 
+`uc 1 TMR3IE 1 0 :1:4 
+`uc 1 TMR3GIE 1 0 :1:5 
+`uc 1 PWM1PIE 1 0 :1:6 
+`uc 1 PWM1IE 1 0 :1:7 
+]
+"35850
+[u S1068 . 1 `S1059 1 . 1 0 ]
+"35850
+"35850
+[v _PIE4bits PIE4bits `VES1068  1 e 1 @1196 ]
+[s S307 . 1 `uc 1 INT0IF 1 0 :1:0 
+`uc 1 ZCDIF 1 0 :1:1 
+`uc 1 ADIF 1 0 :1:2 
+`uc 1 ACTIF 1 0 :1:3 
+`uc 1 C1IF 1 0 :1:4 
+`uc 1 SMT1IF 1 0 :1:5 
+`uc 1 SMT1PRAIF 1 0 :1:6 
+`uc 1 SMT1PWAIF 1 0 :1:7 
+]
+"36323
+[s S316 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 CM1IF 1 0 :1:4 
+]
+"36323
+[u S319 . 1 `S307 1 . 1 0 `S316 1 . 1 0 ]
+"36323
+"36323
+[v _PIR1bits PIR1bits `VES319  1 e 1 @1204 ]
+[s S363 . 1 `uc 1 ADTIF 1 0 :1:0 
+`uc 1 . 1 0 :3:1 
+`uc 1 DMA1SCNTIF 1 0 :1:4 
+`uc 1 DMA1DCNTIF 1 0 :1:5 
+`uc 1 DMA1ORIF 1 0 :1:6 
+`uc 1 DMA1AIF 1 0 :1:7 
+]
+"36388
+[u S370 . 1 `S363 1 . 1 0 ]
+"36388
+"36388
+[v _PIR2bits PIR2bits `VES370  1 e 1 @1205 ]
+[s S1501 . 1 `uc 1 SPI1RXIF 1 0 :1:0 
+`uc 1 SPI1TXIF 1 0 :1:1 
+`uc 1 SPI1IF 1 0 :1:2 
+`uc 1 TMR2IF 1 0 :1:3 
+`uc 1 TMR1IF 1 0 :1:4 
+`uc 1 TMR1GIF 1 0 :1:5 
+`uc 1 CCP1IF 1 0 :1:6 
+`uc 1 TMR0IF 1 0 :1:7 
+]
+"36435
+[u S1510 . 1 `S1501 1 . 1 0 ]
+"36435
+"36435
+[v _PIR3bits PIR3bits `VES1510  1 e 1 @1206 ]
+[s S1029 . 1 `uc 1 U1RXIF 1 0 :1:0 
+`uc 1 U1TXIF 1 0 :1:1 
+`uc 1 U1EIF 1 0 :1:2 
+`uc 1 U1IF 1 0 :1:3 
+`uc 1 TMR3IF 1 0 :1:4 
+`uc 1 TMR3GIF 1 0 :1:5 
+`uc 1 PWM1PIF 1 0 :1:6 
+`uc 1 PWM1IF 1 0 :1:7 
+]
+"36497
+[u S1038 . 1 `S1029 1 . 1 0 ]
+"36497
+"36497
+[v _PIR4bits PIR4bits `VES1038  1 e 1 @1207 ]
+[s S1734 . 1 `uc 1 INT1IF 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 CWG1IF 1 0 :1:2 
+`uc 1 NCO1IF 1 0 :1:3 
+`uc 1 DMA2SCNTIF 1 0 :1:4 
+`uc 1 DMA2DCNTIF 1 0 :1:5 
+`uc 1 DMA2ORIF 1 0 :1:6 
+`uc 1 DMA2AIF 1 0 :1:7 
+]
+"36625
+[u S1743 . 1 `S1734 1 . 1 0 ]
+"36625
+"36625
+[v _PIR6bits PIR6bits `VES1743  1 e 1 @1209 ]
+[s S1765 . 1 `uc 1 INT2IF 1 0 :1:0 
+`uc 1 . 1 0 :2:1 
+`uc 1 TMR4IF 1 0 :1:3 
+`uc 1 DMA4SCNTIF 1 0 :1:4 
+`uc 1 DMA4DCNTIF 1 0 :1:5 
+`uc 1 DMA4ORIF 1 0 :1:6 
+`uc 1 DMA4AIF 1 0 :1:7 
+]
+"36852
+[u S1773 . 1 `S1765 1 . 1 0 ]
+"36852
+"36852
+[v _PIR10bits PIR10bits `VES1773  1 e 1 @1213 ]
+"36887
+[v _LATA LATA `VEuc  1 e 1 @1214 ]
+[s S159 . 1 `uc 1 LATA0 1 0 :1:0 
+`uc 1 LATA1 1 0 :1:1 
+`uc 1 LATA2 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 LATA4 1 0 :1:4 
+`uc 1 LATA5 1 0 :1:5 
+]
+"36902
+[u S166 . 1 `S159 1 . 1 0 ]
+"36902
+"36902
+[v _LATAbits LATAbits `VES166  1 e 1 @1214 ]
+"36932
+[v _LATB LATB `VEuc  1 e 1 @1215 ]
+"36971
+[v _LATC LATC `VEuc  1 e 1 @1216 ]
+[s S24 . 1 `uc 1 LATC0 1 0 :1:0 
+`uc 1 LATC1 1 0 :1:1 
+`uc 1 LATC2 1 0 :1:2 
+`uc 1 LATC3 1 0 :1:3 
+`uc 1 LATC4 1 0 :1:4 
+`uc 1 LATC5 1 0 :1:5 
+`uc 1 LATC6 1 0 :1:6 
+`uc 1 LATC7 1 0 :1:7 
+]
+"36988
+[u S33 . 1 `S24 1 . 1 0 ]
+"36988
+"36988
+[v _LATCbits LATCbits `VES33  1 e 1 @1216 ]
+"37033
+[v _TRISA TRISA `VEuc  1 e 1 @1222 ]
+"37083
+[v _TRISB TRISB `VEuc  1 e 1 @1223 ]
+"37122
+[v _TRISC TRISC `VEuc  1 e 1 @1224 ]
+[s S1439 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"37139
+[u S1448 . 1 `S1439 1 . 1 0 ]
+"37139
+"37139
+[v _TRISCbits TRISCbits `VES1448  1 e 1 @1224 ]
+[s S926 . 1 `uc 1 INT0EDG 1 0 :1:0 
+`uc 1 INT1EDG 1 0 :1:1 
+`uc 1 INT2EDG 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 IPEN 1 0 :1:5 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+"37355
+[s S934 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 GIEH 1 0 :1:7 
+]
+"37355
+[u S937 . 1 `S926 1 . 1 0 `S934 1 . 1 0 ]
+"37355
+"37355
+[v _INTCON0bits INTCON0bits `VES937  1 e 1 @1238 ]
+"38298
+[v _PRODL PRODL `VEuc  1 e 1 @1267 ]
+"38318
+[v _PRODH PRODH `VEuc  1 e 1 @1268 ]
+"9 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\frequencyTable.c
+[v _frequencyTable frequencyTable `C[128][9]uc  1 e 1152 0 ]
+"43 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/adc/src/adc.c
+[v _ADC_ConversionDoneCallback ADC_ConversionDoneCallback `*.37(v  1 s 2 ADC_ConversionDoneCallback ]
+"44
+[v _ADC_ThresholdCallback ADC_ThresholdCallback `*.37(v  1 s 2 ADC_ThresholdCallback ]
+"45
+[v _adc_busy_status adc_busy_status `a  1 s 1 adc_busy_status ]
+"43 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/pwm/src/pwm1_16bit.c
+[v _PWM1_16BIT_Slice1Output1_InterruptHandler PWM1_16BIT_Slice1Output1_InterruptHandler `*.37(v  1 s 2 PWM1_16BIT_Slice1Output1_InterruptHandler ]
+"44
+[v _PWM1_16BIT_Slice1Output2_InterruptHandler PWM1_16BIT_Slice1Output2_InterruptHandler `*.37(v  1 s 2 PWM1_16BIT_Slice1Output2_InterruptHandler ]
+"45
+[v _PWM1_16BIT_Period_InterruptHandler PWM1_16BIT_Period_InterruptHandler `*.37(v  1 s 2 PWM1_16BIT_Period_InterruptHandler ]
+[s S1333 . 5 `uc 1 con0 1 0 `uc 1 con1 1 1 `uc 1 con2 1 2 `uc 1 baud 1 3 `uc 1 clksel 1 4 ]
+"66 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/spi/src/spi1.c
+[v _spi1_configuration spi1_configuration `C[2]S1333  1 s 10 spi1_configuration ]
+"38 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/system/src/interrupt.c
+[v _INT0_InterruptHandler INT0_InterruptHandler `*.37(v  1 e 2 0 ]
+"39
+[v _INT1_InterruptHandler INT1_InterruptHandler `*.37(v  1 e 2 0 ]
+"40
+[v _INT2_InterruptHandler INT2_InterruptHandler `*.37(v  1 e 2 0 ]
+"38 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/timer/src/tmr0.c
+[v _TMR0_PeriodMatchCallback TMR0_PeriodMatchCallback `*.37(v  1 s 2 TMR0_PeriodMatchCallback ]
+[s S2004 . 1 `uc 1 perr 1 0 :1:0 
+`uc 1 ferr 1 0 :1:1 
+`uc 1 oerr 1 0 :1:2 
+`uc 1 reserved 1 0 :5:3 
+]
+"51 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/uart/src/uart1.c
+[u S2009 . 2 `S2004 1 . 1 0 `ui 1 status 2 0 ]
+[v _uart1RxLastError uart1RxLastError `VES2009  1 s 2 uart1RxLastError ]
+"57
+[v _UART1_FramingErrorHandler UART1_FramingErrorHandler `*.37(v  1 s 2 UART1_FramingErrorHandler ]
+"58
+[v _UART1_OverrunErrorHandler UART1_OverrunErrorHandler `*.37(v  1 s 2 UART1_OverrunErrorHandler ]
+"59
+[v _UART1_ParityErrorHandler UART1_ParityErrorHandler `*.37(v  1 s 2 UART1_ParityErrorHandler ]
+"10 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\noteTable.c
+[v _noteTable noteTable `C[128][3]uc  1 e 384 0 ]
+"39 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\main.c
+[v _main main `(i  1 e 2 0 ]
+{
+"59
+} 0
+"83 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\LCDMiniDrivers/lcd.c
+[v _lcd_setup lcd_setup `(v  1 e 1 0 ]
+{
+"109
+} 0
+"31
+[v _lcd_sendNibble lcd_sendNibble `(v  1 e 1 0 ]
+{
+[v lcd_sendNibble@nibble nibble `uc  1 p 1 wreg ]
+"32
+[v lcd_sendNibble@packet packet `uc  1 a 1 15 ]
+"31
+[v lcd_sendNibble@nibble nibble `uc  1 p 1 wreg ]
+[v lcd_sendNibble@RSbit RSbit `uc  1 p 1 12 ]
+[v lcd_sendNibble@nibble nibble `uc  1 p 1 14 ]
+"37
+} 0
+"42 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\LCDMiniDrivers/expander.c
+[v _expander_setup expander_setup `(v  1 e 1 0 ]
+{
+"44
+} 0
+"79 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\LCDMiniDrivers/lcd.c
+[v _lcd_setContrast lcd_setContrast `(v  1 e 1 0 ]
+{
+[v lcd_setContrast@contrast contrast `uc  1 p 1 wreg ]
+[v lcd_setContrast@contrast contrast `uc  1 p 1 wreg ]
+[v lcd_setContrast@contrast contrast `uc  1 p 1 9 ]
+"81
+} 0
+"29 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\LCDMiniDrivers/digpot.c
+[v _digipot_setWiper digipot_setWiper `(v  1 e 1 0 ]
+{
+[v digipot_setWiper@val val `uc  1 p 1 wreg ]
+"31
+[v digipot_setWiper@cmd cmd `[2]uc  1 a 2 7 ]
+"29
+[v digipot_setWiper@val val `uc  1 p 1 wreg ]
+[v digipot_setWiper@val val `uc  1 p 1 6 ]
+"37
+} 0
+"50 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/system/src/system.c
+[v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
+{
+"63
+} 0
+"69 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/uart/src/uart1.c
+[v _UART1_Initialize UART1_Initialize `(v  1 e 1 0 ]
+{
+"114
+} 0
+"314
+[v _UART1_ParityErrorCallbackRegister UART1_ParityErrorCallbackRegister `(v  1 e 1 0 ]
+{
+[v UART1_ParityErrorCallbackRegister@callbackHandler callbackHandler `*.37(v  1 p 2 0 ]
+"320
+} 0
+"306
+[v _UART1_OverrunErrorCallbackRegister UART1_OverrunErrorCallbackRegister `(v  1 e 1 0 ]
+{
+[v UART1_OverrunErrorCallbackRegister@callbackHandler callbackHandler `*.37(v  1 p 2 0 ]
+"312
+} 0
+"298
+[v _UART1_FramingErrorCallbackRegister UART1_FramingErrorCallbackRegister `(v  1 e 1 0 ]
+{
+[v UART1_FramingErrorCallbackRegister@callbackHandler callbackHandler `*.37(v  1 p 2 0 ]
+"304
+} 0
+"45 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/timer/src/tmr0.c
+[v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
+{
+"61
+} 0
+"90 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/system/src/system.c
+[v _SystemArbiter_Initialize SystemArbiter_Initialize `(v  1 e 1 0 ]
+{
+"96
+} 0
+"71 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/spi/src/spi1.c
+[v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
+{
+"117
+} 0
+"50 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/pwm/src/pwm1_16bit.c
+[v _PWM1_16BIT_Initialize PWM1_16BIT_Initialize `(v  1 e 1 0 ]
+{
+"119
+} 0
+"194
+[v _PWM1_16BIT_Slice1Output2_SetInterruptHandler PWM1_16BIT_Slice1Output2_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v PWM1_16BIT_Slice1Output2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"197
+} 0
+"189
+[v _PWM1_16BIT_Slice1Output1_SetInterruptHandler PWM1_16BIT_Slice1Output1_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v PWM1_16BIT_Slice1Output1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"192
+} 0
+"199
+[v _PWM1_16BIT_Period_SetInterruptHandler PWM1_16BIT_Period_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v PWM1_16BIT_Period_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"202
+} 0
+"38 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/system/src/pins.c
+[v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+{
+"118
+} 0
+"42 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/system/src/interrupt.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+{
+"71
+} 0
+"144
+[v _INT2_SetInterruptHandler INT2_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v INT2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"146
+} 0
+"118
+[v _INT1_SetInterruptHandler INT1_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v INT1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"120
+} 0
+"92
+[v _INT0_SetInterruptHandler INT0_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v INT0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"94
+} 0
+"45 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/dma/src/dma1.c
+[v _DMA1_Initialize DMA1_Initialize `(v  1 e 1 0 ]
+{
+"81
+} 0
+"65 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/system/src/system.c
+[v _CPU_Initialize CPU_Initialize `(v  1 e 1 0 ]
+{
+"87
+} 0
+"39 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/system/src/clock.c
+[v _CLOCK_Initialize CLOCK_Initialize `(v  1 e 1 0 ]
+{
+"58
+} 0
+"47 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/adc/src/adc.c
+[v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
+{
+"95
+} 0
+"134 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/spi/src/spi1.c
+[v _SPI1_Open SPI1_Open `(a  1 e 1 0 ]
+{
+[v SPI1_Open@spiConfigIndex spiConfigIndex `uc  1 p 1 wreg ]
+[v SPI1_Open@spiConfigIndex spiConfigIndex `uc  1 p 1 wreg ]
+"137
+[v SPI1_Open@spiConfigIndex spiConfigIndex `uc  1 p 1 0 ]
+"153
+} 0
+"55 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\application.c
+[v _Note_Read Note_Read `(v  1 e 1 0 ]
+{
+"71
+[v Note_Read@freqString freqString `[16]uc  1 a 16 47 ]
+"70
+[v Note_Read@noteString noteString `[16]uc  1 a 16 31 ]
+"68
+[v Note_Read@period period `us  1 a 2 64 ]
+"57
+[v Note_Read@average average `uc  1 a 1 63 ]
+"93
+} 0
+"3 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\strcpy.c
+[v _strcpy strcpy `(*.39uc  1 e 2 0 ]
+{
+"5
+[v strcpy@d d `*.39uc  1 a 2 4 ]
+"3
+[v strcpy@dest dest `*.39uc  1 p 2 0 ]
+[v strcpy@src src `*.32Cuc  1 p 2 2 ]
+"8
+} 0
+"3 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\strcat.c
+[v _strcat strcat `(*.39uc  1 e 2 0 ]
+{
+"5
+[v strcat@i i `ui  1 a 2 4 ]
+"3
+[v strcat@dest dest `*.39uc  1 p 2 0 ]
+[v strcat@src src `*.32Cuc  1 p 2 2 ]
+"14
+} 0
+"163 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\application.c
+[v _sendDebugData sendDebugData `(v  1 e 1 0 ]
+{
+"165
+[v sendDebugData@i i `us  1 a 2 12 ]
+"164
+[v sendDebugData@trigger trigger `uc  1 a 1 11 ]
+"173
+} 0
+"151
+[v _DV_Send DV_Send `(v  1 e 1 0 ]
+{
+"153
+[v DV_Send@ptr ptr `*.39uc  1 a 2 6 ]
+"154
+[v DV_Send@i i `uc  1 a 1 8 ]
+[s S2412 dv_struct_t 6 `uc 1 trigger 1 0 `c 1 sample 1 1 `l 1 correlationSample 4 2 ]
+"151
+[v DV_Send@dv_data dv_data `*.39S2412  1 p 2 2 ]
+[v DV_Send@len len `uc  1 p 1 4 ]
+"161
+} 0
+"270 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/uart/src/uart1.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+[v putch@txData txData `uc  1 p 1 wreg ]
+[v putch@txData txData `uc  1 p 1 wreg ]
+[v putch@txData txData `uc  1 p 1 1 ]
+"277
+} 0
+"255
+[v _UART1_Write UART1_Write `(v  1 e 1 0 ]
+{
+[v UART1_Write@txData txData `uc  1 p 1 wreg ]
+[v UART1_Write@txData txData `uc  1 p 1 wreg ]
+"257
+[v UART1_Write@txData txData `uc  1 p 1 0 ]
+"258
+} 0
+"207
+[v _UART1_IsTxReady UART1_IsTxReady `(a  1 e 1 0 ]
+{
+"210
+} 0
+"132 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\application.c
+[v _offsetCorrectData offsetCorrectData `(v  1 e 1 0 ]
+{
+"134
+[v offsetCorrectData@i i `us  1 a 2 8 ]
+"132
+[v offsetCorrectData@data data `*.39uc  1 p 2 0 ]
+[v offsetCorrectData@correctedData correctedData `*.39c  1 p 2 2 ]
+[v offsetCorrectData@average average `uc  1 p 1 4 ]
+[v offsetCorrectData@len len `us  1 p 2 5 ]
+"139
+} 0
+"96
+[v _find_highest_peak find_highest_peak `(us  1 e 2 0 ]
+{
+"102
+[v find_highest_peak@i i `us  1 a 2 27 ]
+"100
+[v find_highest_peak@amplitude amplitude `l  1 a 4 23 ]
+"99
+[v find_highest_peak@peak peak `us  1 a 2 21 ]
+"96
+[v find_highest_peak@values values `*.39l  1 p 2 0 ]
+[v find_highest_peak@len len `us  1 p 2 2 ]
+[v find_highest_peak@peakThreshold peakThreshold `l  1 p 4 4 ]
+"117
+} 0
+"141
+[v _averageData averageData `(uc  1 e 1 0 ]
+{
+"144
+[v averageData@i i `us  1 a 2 22 ]
+"142
+[v averageData@accumulator accumulator `ul  1 a 4 18 ]
+"141
+[v averageData@data data `*.39uc  1 p 2 13 ]
+[v averageData@len len `us  1 p 2 15 ]
+"149
+} 0
+"7 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"10
+[v ___lldiv@quotient quotient `ul  1 a 4 8 ]
+"11
+[v ___lldiv@counter counter `uc  1 a 1 12 ]
+"7
+[v ___lldiv@dividend dividend `ul  1 p 4 0 ]
+[v ___lldiv@divisor divisor `ul  1 p 4 4 ]
+"30
+} 0
+"119 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\application.c
+[v _autocorrelation autocorrelation `(v  1 e 1 0 ]
+{
+"124
+[v autocorrelation@k k `us  1 a 2 22 ]
+"122
+[v autocorrelation@sum sum `l  1 a 4 18 ]
+"120
+[v autocorrelation@i i `us  1 a 2 24 ]
+"119
+[v autocorrelation@data data `*.39c  1 p 2 0 ]
+[v autocorrelation@autocorrelation_values autocorrelation_values `*.39l  1 p 2 2 ]
+[v autocorrelation@len len `us  1 p 2 4 ]
+"130
+} 0
+"191 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/dma/src/dma1.c
+[v _DMA1_TransferWithTriggerStart DMA1_TransferWithTriggerStart `(v  1 e 1 0 ]
+{
+"195
+} 0
+"42 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\application.c
+[v _Display_Splash Display_Splash `(v  1 e 1 0 ]
+{
+"53
+} 0
+"69 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\LCDMiniDrivers/lcd.c
+[v _lcd_writeString lcd_writeString `(v  1 e 1 0 ]
+{
+"72
+[v lcd_writeString@i i `uc  1 a 1 27 ]
+"69
+[v lcd_writeString@string string `*.34uc  1 p 2 21 ]
+[v lcd_writeString@len len `uc  1 p 1 23 ]
+[v lcd_writeString@row row `uc  1 p 1 24 ]
+"77
+} 0
+"65
+[v _lcd_writeChar lcd_writeChar `(v  1 e 1 0 ]
+{
+[v lcd_writeChar@character character `uc  1 p 1 wreg ]
+[v lcd_writeChar@character character `uc  1 p 1 wreg ]
+[v lcd_writeChar@character character `uc  1 p 1 19 ]
+"67
+} 0
+"61
+[v _lcd_setAddr lcd_setAddr `(v  1 e 1 0 ]
+{
+[v lcd_setAddr@row row `uc  1 p 1 wreg ]
+[v lcd_setAddr@row row `uc  1 p 1 wreg ]
+[v lcd_setAddr@character character `uc  1 p 1 19 ]
+[v lcd_setAddr@row row `uc  1 p 1 20 ]
+"63
+} 0
+"53
+[v _lcd_returnHome lcd_returnHome `(v  1 e 1 0 ]
+{
+"55
+} 0
+"57
+[v _lcd_clearDisplay lcd_clearDisplay `(v  1 e 1 0 ]
+{
+"59
+} 0
+"39
+[v _lcd_sendByte lcd_sendByte `(v  1 e 1 0 ]
+{
+[v lcd_sendByte@byte byte `uc  1 p 1 wreg ]
+"43
+[v lcd_sendByte@packetLow packetLow `uc  1 a 1 18 ]
+"42
+[v lcd_sendByte@packetHigh packetHigh `uc  1 a 1 17 ]
+"41
+[v lcd_sendByte@nibbleLow nibbleLow `uc  1 a 1 15 ]
+"40
+[v lcd_sendByte@nibbleHigh nibbleHigh `uc  1 a 1 14 ]
+"39
+[v lcd_sendByte@byte byte `uc  1 p 1 wreg ]
+[v lcd_sendByte@RSbit RSbit `uc  1 p 1 12 ]
+[v lcd_sendByte@byte byte `uc  1 p 1 16 ]
+"51
+} 0
+"46 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\LCDMiniDrivers/expander.c
+[v _expander_setOutput expander_setOutput `(v  1 e 1 0 ]
+{
+[v expander_setOutput@output output `uc  1 p 1 wreg ]
+[v expander_setOutput@output output `uc  1 p 1 wreg ]
+[v expander_setOutput@output output `uc  1 p 1 11 ]
+"48
+} 0
+"31
+[v _expander_sendByte expander_sendByte `(v  1 e 1 0 ]
+{
+[v expander_sendByte@addr addr `uc  1 p 1 wreg ]
+"33
+[v expander_sendByte@cmd cmd `[3]uc  1 a 3 8 ]
+"31
+[v expander_sendByte@addr addr `uc  1 p 1 wreg ]
+[v expander_sendByte@byte byte `uc  1 p 1 6 ]
+[v expander_sendByte@addr addr `uc  1 p 1 7 ]
+"40
+} 0
+"226 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/spi/src/spi1.c
+[v _SPI1_BufferWrite SPI1_BufferWrite `(v  1 e 1 0 ]
+{
+"228
+[v SPI1_BufferWrite@bufferInput bufferInput `*.39uc  1 a 2 4 ]
+"226
+[v SPI1_BufferWrite@bufferData bufferData `*.39v  1 p 2 0 ]
+[v SPI1_BufferWrite@bufferSize bufferSize `ui  1 p 2 2 ]
+"253
+} 0
+"137 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/pwm/src/pwm1_16bit.c
+[v _PWM1_16BIT_SetSlice1Output1DutyCycleRegister PWM1_16BIT_SetSlice1Output1DutyCycleRegister `(v  1 e 1 0 ]
+{
+[v PWM1_16BIT_SetSlice1Output1DutyCycleRegister@registerValue registerValue `us  1 p 2 0 ]
+"141
+} 0
+"149
+[v _PWM1_16BIT_LoadBufferRegisters PWM1_16BIT_LoadBufferRegisters `(v  1 e 1 0 ]
+{
+"153
+} 0
+"83 C:\Users\C16369\MPAE\pic18f16q40-guitar-tuner\pic18f16q40-guitar-tuner.X\mcc_generated_files/dma/src/dma1.c
+[v _DMA1_Enable DMA1_Enable `(v  1 e 1 0 ]
+{
+"87
+} 0
+"113
+[v _DMA1_DestinationAddressSet DMA1_DestinationAddressSet `(v  1 e 1 0 ]
+{
+[v DMA1_DestinationAddressSet@address address `us  1 p 2 0 ]
+"117
+} 0

@@ -4,22 +4,20 @@
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
             <name>pic18f16q40-guitar-tuner</name>
-            <creation-uuid>954757de-968b-4b8a-bd74-8d3f3023c8c0</creation-uuid>
+            <creation-uuid>82a86348-8047-4dcc-8737-67181776a3ba</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions>c</c-extensions>
-            <cpp-extensions/>
-            <header-extensions>h</header-extensions>
-            <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
-            <sourceRootList/>
+            <sourceRootList>
+                <sourceRootElem>.</sourceRootElem>
+            </sourceRootList>
             <confList>
                 <confElem>
-                    <name>free</name>
+                    <name>default</name>
                     <type>2</type>
                 </confElem>
                 <confElem>
-                    <name>pro</name>
+                    <name>DEBUG</name>
                     <type>2</type>
                 </confElem>
             </confList>

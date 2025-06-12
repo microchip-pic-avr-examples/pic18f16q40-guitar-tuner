@@ -1,17 +1,16 @@
- /*
- * MAIN Generated Driver File
+/**
+ * System Driver Header File.
  * 
- * @file main.c
+ * @file system.h
  * 
- * @defgroup main MAIN
+ * @defgroup systemdriver System Driver
  * 
- * @brief This is the generated driver implementation file for the MAIN driver.
+ * @brief This file contains the API prototypes and other datatypes for the System Driver.
  *
- * @version MAIN Driver Version 1.0.2
+ * @version Driver Version 2.0.3
  *
- * @version Package Version: 3.1.2
+ * @version Package Version 2.1.6
 */
-
 /*
 © [2025] Microchip Technology Inc. and its subsidiaries.
 
@@ -32,28 +31,33 @@
     EXCEED AMOUNT OF FEES, IF ANY, YOU PAID DIRECTLY TO MICROCHIP FOR 
     THIS SOFTWARE.
 */
-#include "mcc_generated_files/system/system.h"
-#include "application.h"
 
+#ifndef SYSTEM_H
+#define	SYSTEM_H
 
-int main(void)
-{
-    SYSTEM_Initialize();
-    SPI1_Open(LCD);
-          
-    lcd_setup();
-    lcd_setContrast(40);  // Contrast should be adjusted based on your particular display
+#include <xc.h>
+#include <stdint.h>
+#include <stdbool.h>
+#include "config_bits.h"
+#include "../system/pins.h"
+#include "../dma/dma1.h"
+#include "../pwm/pwm1_16bit.h"
+#include "../uart/uart1.h"
+#include "../system/interrupt.h"
+#include "../system/clock.h"
+#include "../adc/adc.h"
+#include "../spi/spi1.h"
+#include "../timer/tmr0.h"
 
-    Display_Splash();
-    
-    DMA1_SetDestinationAddress((uint16_t)(&rawData));
-    DMA1_Enable();    
-    DMA1_TransferWithTriggerStart();
-    
-    while( 0 == PIR2bits.DMA1DCNTIF ); // Wait to get the first set of samples
-    
-    while(1)
-    {        
-        Note_Read();        
-    }    
-}
+/**
+ * @ingroup systemdriver
+ * @brief Initializes the system module. This is called only once before calling other APIs.
+ * @param None.
+ * @return None.
+*/
+void SYSTEM_Initialize(void);
+
+#endif	/* SYSTEM_H */
+/**
+ End of File
+*/

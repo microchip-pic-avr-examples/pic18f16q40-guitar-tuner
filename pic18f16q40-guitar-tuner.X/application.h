@@ -13,9 +13,8 @@ extern "C" {
 #endif
 
 #include <xc.h>
-#include "mcc_generated_files/mcc.h"
-#include "mcc_generated_files/pwm1_16bit.h"
-#include "mcc_generated_files/LCDMiniDrivers/lcd.h"
+#include "mcc_generated_files/system/system.h"
+#include "LCDMiniDrivers/lcd.h"
 #include <stdint.h>
 #include <stdbool.h>
 
@@ -23,24 +22,13 @@ extern "C" {
      Section: Variable Definitions
      */
 
-    bool samplingDone = false;
-
-
-    /*
-     Section: Macro Declaration
-     */
+    uint8_t rawData[512];
 
     /**
      *Summary
       This routine is used to setup the LCD and and display the initial text on the LCD.
      */
-    Display_Print_Splash(void);
-
-    /**
-      @Summary
-        This routine is used to read and print the note on LCD and setup the DMA for the next set of transfer.
-     */
-    void Note_Print(void);
+    void Display_Splash(void);
 
     /**
       @Summary
@@ -48,20 +36,7 @@ extern "C" {
      */
     void Note_Read(void);
 
-    /**
-      @Summary
-        This routine is used to display the musical note representing the measured frequency on the LCD.
-     
-      @param
-        input_freq
-     */
-    void Note_Display(float input_freq);
 
-    /**
-      @Summary
-        This routine is used to control what happens at the time of the DMA interrupt.
-     */
-    void DMA1_CustomISR(void);
 
 #ifdef	__cplusplus
 }

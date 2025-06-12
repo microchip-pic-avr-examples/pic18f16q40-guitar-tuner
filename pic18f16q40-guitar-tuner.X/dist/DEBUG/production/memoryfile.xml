@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/DEBUG/production\pic18f16q40-guitar-tuner.X.production.hex">
+    <memory name="program">
+      <units>bytes</units>
+      <length>65536</length>
+      <used>5754</used>
+      <free>59782</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>4096</length>
+      <used>3171</used>
+      <free>925</free>
+    </memory>
+  </executable>
+</project>
